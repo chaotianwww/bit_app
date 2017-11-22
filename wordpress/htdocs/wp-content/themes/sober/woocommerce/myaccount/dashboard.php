@@ -31,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <p>
 	<?php
-		echo sprintf( esc_attr__( 'Test From your account dashboard you can view your %1$srecent orders%2$s, manage your %3$sshipping and billing addresses%2$s and %4$sedit your password and account details%2$s.', 'sober' ), '<a href="' . esc_url( wc_get_endpoint_url( 'orders' ) ) . '">', '</a>', '<a href="' . esc_url( wc_get_endpoint_url( 'edit-address' ) ) . '">', '<a href="' . esc_url( wc_get_endpoint_url( 'edit-account' ) ) . '">' );
+		echo sprintf( esc_attr__( 'From your account dashboard you can view your %1$srecent orders%2$s, manage your %3$sshipping and billing addresses%2$s and %4$sedit your password and account details%2$s.', 'sober' ), '<a href="' . esc_url( wc_get_endpoint_url( 'orders' ) ) . '">', '</a>', '<a href="' . esc_url( wc_get_endpoint_url( 'edit-address' ) ) . '">', '<a href="' . esc_url( wc_get_endpoint_url( 'edit-account' ) ) . '">' );
 	?>
 </p>
 
@@ -57,10 +57,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 */
 	do_action( 'woocommerce_after_my_account' );
 ?>
-
 <p>
     sendmail</br>
-    share to facebook
-    share to twitter
-    share to google+
+    share to facebook</br>
+    share to twitter</br>
+    share to google+</br>
 </p>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $.ajaxSetup({ cache: true });
+        $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
+            FB.init({
+                appId: '{your-app-id}',
+                version: 'v2.7' // or v2.1, v2.2, v2.3, ...
+            });
+            $('#loginbutton,#feedbutton').removeAttr('disabled');
+            FB.getLoginStatus(updateStatusCallback);
+        });
+
+        FB.ui(
+            {
+                method: 'share',
+                href: esc_url( wc_get_endpoint_url( 'edit-account' ) )
+            }, function(response){});
+    });
+</script>
