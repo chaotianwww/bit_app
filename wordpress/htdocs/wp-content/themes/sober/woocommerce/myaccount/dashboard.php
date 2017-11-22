@@ -58,10 +58,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	do_action( 'woocommerce_after_my_account' );
 ?>
 <p>
-    sendmail</br>
+    <a id="send_email">sendmail</a></br>
     <a id="share_face_book">share to facebook</a></br>
-    share to twitter</br>
-    share to google+</br>
+    <a id="share_twitter">share to twitter</a></br>
+    <a id="share_google">share to google+</a></br>
 </p>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script>
@@ -75,6 +75,8 @@ if ( ! defined( 'ABSPATH' ) ) {
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
+
+
     window.fbAsyncInit = function() {
         FB.init({
             appId            : '1955847301339546',
@@ -84,14 +86,43 @@ if ( ! defined( 'ABSPATH' ) ) {
         });
 
         $("#share_face_book").click(function(){
+            console.log('$("#raf-message a").html():'+$("#raf-message a").html());
             FB.ui(
                 {
                     method: 'share',
                     href: $("#raf-message a").html();
                 }, function(response){});
         });
-
     };
+    $(document).ready(function(){
+       $("#send_email").click(function(){
+
+           console.log('$("#raf-message a").html():'+$("#raf-message a").html());
+           window.open('mailto:uncle.cyan@gmail.com?subject=spade.com&body='+$("#raf-message a").html());
+       });
+    });
 
 
+</script>
+<script>
+    window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function(f) {
+            t._e.push(f);
+        };
+
+        return t;
+    }(document, "script", "twitter-wjs"));
+
+    twttr.widgets.load(
+        document.getElementById("container")
+    );
 </script>
