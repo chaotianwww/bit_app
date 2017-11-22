@@ -1,0 +1,10 @@
+2017-11-09T18:32:11+00:00 CRITICAL Uncaught Error: Call to a member function is_visible() on boolean in /opt/bitnami/apps/wordpress/htdocs/wp-content/themes/sober/woocommerce/wishlist/wishlist.php:40
+Stack trace:
+#0 /opt/bitnami/apps/wordpress/htdocs/wp-content/plugins/woocommerce/includes/wc-core-functions.php(209): include()
+#1 /opt/bitnami/apps/wordpress/htdocs/wp-content/plugins/soo-wishlist/includes/function-wishlist.php(71): wc_get_template('wishlist/wishli...', Array, '', '/opt/bitnami/ap...')
+#2 /opt/bitnami/apps/wordpress/htdocs/wp-content/plugins/soo-wishlist/includes/class-wishlist-shortcodes.php(104): soow_get_template('wishlist/wishli...', Array)
+#3 /opt/bitnami/apps/wordpress/htdocs/wp-includes/shortcodes.php(345): Soo_Wishlist_Shortcodes::wishlist(Array, '', 'soo_wishlist')
+#4 [internal function]: do_shortcode_tag(Array)
+#5 /opt/bitnami/apps/wordpress/htdocs/wp-includes/shortcodes.php(223): preg_replace_callback('/\\[(\\[?)(soo_wi...', 'do_shortcode_ta...', '[soo_wishlist]')
+#6 /opt/bitnami/apps/wordpress/htdocs/wp-content/theme
+

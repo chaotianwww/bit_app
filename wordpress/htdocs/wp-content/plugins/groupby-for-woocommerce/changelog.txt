@@ -1,0 +1,49 @@
+** Version 1.1.7 **
+- Add: Limit ticket by group buy in the quantity selector
+- Add: Compact countdown option
+- Fix: Changed admin dashboard widget
+- Fix: Php notice in backend WooCommerce email settings
+
+** Version 1.1.6 **
+- Fix: stock status not changing when relisting
+- Fix: featured_groupbuys shortcode bug
+- Fix: future group buy not showing once it starts
+- Fix: bugs in admin backend filter product on PHP v7.1.x
+
+** Version 1.1.5 **
+- Fix: Bug not creating log table on activation
+
+** Version 1.1.4 **
+- Fix: Featured groupbuys shortcode bug
+- Fix: Groupbuys shortcode bug
+
+** Version 1.1.3 **
+- Fix: Featured widget bug
+- Fix: Check for minimal PHP and WordPress versions to avoid fatal errors on activating plugin in unsupported environment
+
+** Version 1.1.2 **
+- Fix: Progres bar no-min class on single page
+- Fix: Progres bar value 0 bug
+
+** Version 1.1.1 **
+- Fix: Query problems with WC 3.0.0
+- Fix: WPML bug when using secondary language without main language
+
+** Version 1.1 **
+- Fix: WooCommerce > 3.0 compatibility
+- Fix: Delete entry when order is cancelled
+- Fix: Multiple failed emails to same user
++ Add: manual group buy relist feature
++ Add: Added [vendor] tag for sending mail to group buy author/vendor on group_buy_fail, group_buy_finished - useful with multivendor plugins like WC Vendors or if you want to send email to group buy author or owner in case of multivendor site
+
+** Version 1.0.3 **
+- Fix: fatal error bug in loop template
+
+** Version 1.0.2 **
+- Fix: JS bug in frontend
+
+** Version 1.0.1 **
+- Fix: Bug with text domain
+
+** Version 1.0.0 **
+- Initial release
