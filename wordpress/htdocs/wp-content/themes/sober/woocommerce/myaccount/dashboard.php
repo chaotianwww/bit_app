@@ -87,7 +87,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             FB.ui(
                 {
                     method: 'share',
-                    href: "www.facebook.com"
+                    href: $("#raf-message a").html();
                 }, function(response){});
         });
 
