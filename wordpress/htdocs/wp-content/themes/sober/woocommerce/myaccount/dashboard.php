@@ -65,21 +65,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 </p>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script>
-    $(document).ready(function() {
-        $.ajaxSetup({ cache: true });
-        $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
-            FB.init({
-                appId: '{your-app-id}',
-                version: 'v2.7' // or v2.1, v2.2, v2.3, ...
-            });
-            $('#loginbutton,#feedbutton').removeAttr('disabled');
-            FB.getLoginStatus(updateStatusCallback);
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId            : '1955847301339546',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v2.11'
         });
+    };
 
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    $(document).ready(function() {
         FB.ui(
             {
                 method: 'share',
                 href: esc_url( wc_get_endpoint_url( 'edit-account' ) )
             }, function(response){});
+
     });
 </script>
