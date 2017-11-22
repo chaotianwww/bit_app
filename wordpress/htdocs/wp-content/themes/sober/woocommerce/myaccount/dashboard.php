@@ -90,7 +90,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             FB.ui(
                 {
                     method: 'share',
-                    href: $("#raf-message a").html();
+                    href: $("#raf-message a").html()
                 }, function(response){});
         });
     };
