@@ -122,7 +122,4 @@ if ( ! defined( 'ABSPATH' ) ) {
         return t;
     }(document, "script", "twitter-wjs"));
 
-    twttr.widgets.load(
-        document.getElementById("container")
-    );
 </script>
