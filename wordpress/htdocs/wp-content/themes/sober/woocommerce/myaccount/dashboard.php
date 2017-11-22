@@ -74,7 +74,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         js.src = "https://connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-    
+
     window.fbAsyncInit = function() {
         FB.init({
             appId            : '1955847301339546',
@@ -86,7 +86,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         FB.ui(
             {
                 method: 'share',
-                href: esc_url( wc_get_endpoint_url( 'edit-account' ) )
+                href: "<?php echo esc_url( wc_get_endpoint_url( 'edit-account' ) ) ?>"
             }, function(response){});
     };
 
