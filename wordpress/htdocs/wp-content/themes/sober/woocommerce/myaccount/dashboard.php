@@ -65,14 +65,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </p>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script>
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId            : '1955847301339546',
-            autoLogAppEvents : true,
-            xfbml            : true,
-            version          : 'v2.11'
-        });
-    };
+
 
     (function(d, s, id){
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -81,13 +74,21 @@ if ( ! defined( 'ABSPATH' ) ) {
         js.src = "https://connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
+    
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId            : '1955847301339546',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v2.11'
+        });
 
-    $(document).ready(function() {
         FB.ui(
             {
                 method: 'share',
                 href: esc_url( wc_get_endpoint_url( 'edit-account' ) )
             }, function(response){});
+    };
 
-    });
+
 </script>
