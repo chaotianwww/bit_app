@@ -59,7 +59,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <p>
     sendmail</br>
-    share to facebook</br>
+    <a id="share_face_book">share to facebook</a></br>
     share to twitter</br>
     share to google+</br>
 </p>
@@ -83,11 +83,14 @@ if ( ! defined( 'ABSPATH' ) ) {
             version          : 'v2.11'
         });
 
-        FB.ui(
-            {
-                method: 'share',
-                href: "<?php echo esc_url( wc_get_endpoint_url( 'edit-account' ) ) ?>"
-            }, function(response){});
+        $("#share_face_book").click(function(){
+            FB.ui(
+                {
+                    method: 'share',
+                    href: "www.facebook.com"
+                }, function(response){});
+        });
+
     };
 
 
