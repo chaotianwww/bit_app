@@ -57,3 +57,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 */
 	do_action( 'woocommerce_after_my_account' );
 ?>
+
+<p>
+    sendmail</br>
+    share to facebook
+    share to twitter
+    share to google+
+</p>
