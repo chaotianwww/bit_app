@@ -65,6 +65,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 </p>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script>
+    window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function(f) {
+            t._e.push(f);
+        };
+
+        return t;
+    }(document, "script", "twitter-wjs"));
+
+</script>
+<script>
+
 
     (function(d, s, id){
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -93,13 +113,25 @@ if ( ! defined( 'ABSPATH' ) ) {
                 }, function(response){});
         });
     };
-    $(document).ready(function() {
-        $("#send_email").click(function () {
+    $(document).ready(function(){
+       $("#send_email").click(function(){
 
-            console.log('$("#raf-message a").html():' + $("#raf-message a").html());
-            window.open('mailto:uncle.cyan@gmail.com?subject=spade.com&body=' + $("#raf-message a").html());
-        });
+           console.log('$("#raf-message a").html():'+$("#raf-message a").html());
+           window.open('mailto:uncle.cyan@gmail.com?subject=spade.com&body='+$("#raf-message a").html());
+       });
 
+        twttr.widgets.createShareButton(
+            $("#raf-message a").html(),
+            document.getElementById("share_twitter"),
+            {
+                size: "large",
+                text: "share to twitter",
+                hashtags: "example,demo",
+                via: "twitterdev",
+                related: "twitterapi,twitter"
+            }
+        );
     });
+
 
 </script>
