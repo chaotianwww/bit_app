@@ -168,13 +168,13 @@ function sober_woocommerce_pages_header() {
 	$pages = array();
 
 	// Prepare for cart links
-	$pages['cart'] = sprintf(
+	/*$pages['cart'] = sprintf(
 		'<li class="shopping-cart-link line-hover %s"><a href="%s">%s<span class="count cart-counter">%d</span></a></li>',
 		is_cart() ? 'active' : '',
 		esc_url( wc_get_cart_url() ),
 		esc_html__( 'Shopping Cart', 'sober' ),
 		WC()->cart->get_cart_contents_count()
-	);
+	);*/
 
 	// Prepare for wishlist link
 	if ( function_exists( 'soow_count_products' ) ) {
