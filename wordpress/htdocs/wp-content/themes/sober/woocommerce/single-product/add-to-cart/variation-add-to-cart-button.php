@@ -19,7 +19,6 @@ global $product;
 	 * @since 3.0.0.
 	 */
 	do_action( 'woocommerce_before_add_to_cart_quantity' );
-print_r(apply_filters( 'woocommerce_quantity_input_min', method_exists( $product, 'get_min_purchase_quantity' ) ? $product->get_min_purchase_quantity() : 1, $product ));exit;
 	woocommerce_quantity_input( array(
 		'min_value'   => apply_filters( 'woocommerce_quantity_input_min', method_exists( $product, 'get_min_purchase_quantity' ) ? $product->get_min_purchase_quantity() : 1, $product ),
 		'max_value'   => apply_filters( 'woocommerce_quantity_input_max', method_exists( $product, 'get_max_purchase_quantity' ) ? $product->get_max_purchase_quantity() : ($product->backorders_allowed() ? '' : $product->get_stock_quantity()), $product ),
@@ -39,7 +38,7 @@ print_r(apply_filters( 'woocommerce_quantity_input_min', method_exists( $product
 		<?php echo esc_html( $product->single_add_to_cart_text() ); ?>
 	</button>
     <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="button checkout wc-forward">
-        <span class="subtotal"><?php echo WC()->cart->get_cart_subtotal() ?></span>
+        <span class="subtotal"><?php echo $product->get_min_purchase_quantity ?></span>
         <span><?php esc_html_e( 'Checkout', 'sober' ); ?></span>
     </a>
 	<input type="hidden" name="add-to-cart" value="<?php echo absint( $product->get_id() ); ?>" />
