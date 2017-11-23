@@ -1,3 +1,12 @@
+<style>
+    .wishlist,.product_title {display: inline-block;vertical-align: top;}
+    .product_title{width:80%;}
+    button.price{padding:6px 0;border-radius: 3px;}
+    .direct-purchase{width:35%;background: #599bd5;}
+    .direct-purchase:hover{background: #599bd5;}
+    .friendeal{width:50%;background: #ed7d31;}
+    .friendeal:hover{background: #ed7d31;}
+</style>
 <?php
 /**
  * Single Product title
@@ -21,3 +30,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 the_title( '<h1 class="product_title entry-title">', '</h1>' );
+
+?>
+<form class="cart wishlist">
+    <?php
+        if ( shortcode_exists( 'add_to_wishlist' ) ) {
+            echo do_shortcode( '[add_to_wishlist]' );
+        }
+?>
+</form>
