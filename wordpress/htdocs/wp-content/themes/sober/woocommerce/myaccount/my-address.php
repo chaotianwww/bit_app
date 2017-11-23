@@ -75,8 +75,8 @@ $col    = 1;
 		</address>
 	</div>
 
-    <div class="edit-button"><a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', 'add' ) ); ?>" class="edit button">add more shipping address</a></div>
-
 <?php endforeach; ?>
+
+<!--<div class="edit-button"><a href="<?php /*echo esc_url( wc_get_endpoint_url( 'edit-address', 'add' ) ); */?>" class="edit button">add more shipping address</a></div>-->
 
 <?php if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) echo '</div>'; ?>
