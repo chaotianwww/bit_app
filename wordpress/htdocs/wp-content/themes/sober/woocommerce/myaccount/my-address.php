@@ -44,7 +44,7 @@ $col    = 1;
 
 <?php if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) echo '<div class="u-columns woocommerce-Addresses col2-set addresses">'; ?>
 
-<?php $num = 0; ?>
+<?php $total_num = $null_num = 0; ?>
 <?php foreach ( $get_addresses as $name => $title ) : ?>
     <?php
 
@@ -63,7 +63,7 @@ $col    = 1;
          $formatted_address = WC()->countries->get_formatted_address( $address );
         if ( !$formatted_address ){
 
-            if($num == 0 ){
+            if($null_num++ == 0 ){
             ?>
             <div class="u-column<?php echo ( ( $col = $col * -1 ) < 0 ) ? 1 : 2; ?> col-<?php echo ( ( $oldcol = $oldcol * -1 ) < 0 ) ? 1 : 2; ?> woocommerce-Address">
                 <header class="woocommerce-Address-title title">
@@ -77,7 +77,7 @@ $col    = 1;
             <?php }
 
         }else{
-            $num++;
+            $total_num++;
         ?>
             <div class="u-column<?php echo ( ( $col = $col * -1 ) < 0 ) ? 1 : 2; ?> col-<?php echo ( ( $oldcol = $oldcol * -1 ) < 0 ) ? 1 : 2; ?> woocommerce-Address">
                 <header class="woocommerce-Address-title title">
@@ -92,7 +92,7 @@ $col    = 1;
 
 <?php endforeach; ?>
 
-<?php if($num < 2){ ?>
+<?php if($total_num < 2){ ?>
     <div class="edit-button"><a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', 'shipping'.$num ) ); ?>" class="edit button">add more shipping address</a></div>
 <?php } ?>
 
