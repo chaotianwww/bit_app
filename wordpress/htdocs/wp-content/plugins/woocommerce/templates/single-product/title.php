@@ -21,7 +21,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 the_title( '<h1 class="product_title entry-title">', '</h1>' );
-
-if ( shortcode_exists( 'add_to_wishlist' ) ) {
-    echo do_shortcode( '[add_to_wishlist]' );
-}

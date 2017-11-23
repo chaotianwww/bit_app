@@ -43,5 +43,10 @@ global $product;
 	<input type="hidden" name="product_id" value="<?php echo absint( $product->get_id() ); ?>" />
 	<input type="hidden" name="variation_id" class="variation_id" value="0" />
     <input type="hidden" name="checkout_url" value="<?php echo esc_url( wc_get_checkout_url()); ?>"/>
+<?php
 
+if ( shortcode_exists( 'add_to_wishlist' ) ) {
+    echo do_shortcode( '[add_to_wishlist]' );
+}
+?>
 </div>
