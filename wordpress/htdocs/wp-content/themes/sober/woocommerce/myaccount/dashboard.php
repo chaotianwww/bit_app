@@ -120,7 +120,7 @@ if ( ! defined( 'ABSPATH' ) ) {
            window.open('mailto:uncle.cyan@gmail.com?subject=spade.com&body='+$("#raf-message a").html());
        });
 
-        twttr.widgets.createShareButton(
+       /* twttr.widgets.createShareButton(
             $("#raf-message a").html(),
             document.getElementById("share_twitter"),
             {
@@ -130,7 +130,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 via: "twitterdev",
                 related: "twitterapi,twitter"
             }
-        );
+        );*/
     });
 
 
