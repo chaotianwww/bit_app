@@ -25,9 +25,6 @@ global $product;
 		'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : ( method_exists( $product, 'get_min_purchase_quantity' ) ? $product->get_min_purchase_quantity() : 1 ),
 	) );*/
     ?>
-    <?php
-    print_r($product)
-    ?>
 
     <button class="price direct-purchase">直购价</button>
     <?php
@@ -38,7 +35,7 @@ global $product;
 	do_action( 'woocommerce_after_add_to_cart_quantity' );
 	?>
 	<button type="submit" class="single_add_to_cart_button price friendeal">
-        <?php esc_html_e( '拼单价', 'sober' ); ?>
+        <?php esc_html_e( '拼单价$'.$product->price, 'sober' ); ?>
 	</button>
     <!--<a href="<?php /*echo esc_url( wc_get_checkout_url() ); */?>" class="button checkout wc-forward">
         <span class="subtotal"><?php /*echo $product->get_min_purchase_quantity */?></span>
