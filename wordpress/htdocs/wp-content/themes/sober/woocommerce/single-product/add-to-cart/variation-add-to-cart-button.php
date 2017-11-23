@@ -26,7 +26,7 @@ global $product;
 	) );*/
     ?>
 
-    <button class="price direct-purchase">直购价　$<?php echo $product->price*2?></button>
+    <button class="price direct-purchase">直购价　$<?php echo $product->price*10?></button>
     <?php
 
 	/**
