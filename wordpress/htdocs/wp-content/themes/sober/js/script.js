@@ -1647,7 +1647,6 @@
 		}
 
 		sober.$body.on( 'submit', 'form.cart', function () {
-            alert(11111111111111111);
 			var $form = $( this ),
 				$button = $form.find( '.single_add_to_cart_button' ),
 				url = $form.attr( 'action' ) ? $form.attr( 'action' ) : window.location.href;
@@ -1675,7 +1674,8 @@
 							sober.$body.append( $alert );
 						}
 
-						$alert.html( $message );
+						//$alert.html( $message );
+                        alert('success');
 						setTimeout( function () {
 							$alert.addClass( 'active' );
 						}, 500 );
