@@ -47,8 +47,8 @@ $col    = 1;
 <?php $num = 0; ?>
 <?php foreach ( $get_addresses as $name => $title ) : ?>
 111
-    <?php
-
+   <!-- <?php
+/*
         $address = apply_filters( 'woocommerce_my_account_my_address_formatted_address', array(
             'first_name'  => get_user_meta( $customer_id, $name . '_first_name', true ),
             'last_name'   => get_user_meta( $customer_id, $name . '_last_name', true ),
@@ -67,17 +67,17 @@ $col    = 1;
                 _e( 'You have not set up this type of address yet.', 'sober' );
         }else{
 
-        ?>
-            <div class="u-column<?php echo ( ( $col = $col * -1 ) < 0 ) ? 1 : 2; ?> col-<?php echo ( ( $oldcol = $oldcol * -1 ) < 0 ) ? 1 : 2; ?> woocommerce-Address">
+        */?>
+            <div class="u-column<?php /*echo ( ( $col = $col * -1 ) < 0 ) ? 1 : 2; */?> col-<?php /*echo ( ( $oldcol = $oldcol * -1 ) < 0 ) ? 1 : 2; */?> woocommerce-Address">
                 <header class="woocommerce-Address-title title">
-                    <h3><?php echo $title; ?></h3>
+                    <h3><?php /*echo $title; */?></h3>
                 </header>
                 <address>
-                    <?php  echo $formatted_address;  ?>
-                    <div class="edit-button"><a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="edit button"><?php _e( 'Edit', 'sober' ); ?></a></div>
+                    <?php /* echo $formatted_address;  */?>
+                    <div class="edit-button"><a href="<?php /*echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); */?>" class="edit button"><?php /*_e( 'Edit', 'sober' ); */?></a></div>
                 </address>
             </div>
-        <? } ?>
+        --><?/* } */?>
 
 <?php endforeach; ?>
 
