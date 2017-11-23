@@ -65,16 +65,12 @@ if ( $product->is_in_stock() ) : ?>
 		?>
 
 		<input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" />
-		<!--<button type="submit" class="single_add_to_cart_button button alt">
+		<button type="submit" class="single_add_to_cart_button button alt">
 			<svg viewBox="0 0 20 20">
 				<use xlink:href="#basket-addtocart"></use>
 			</svg>
-			<?php /*echo esc_html( $product->single_add_to_cart_text() ); */?>
-		</button>-->
-        <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="button checkout wc-forward">
-            <span class="subtotal"><?php echo WC()->cart->get_cart_subtotal() ?></span>
-            <span><?php esc_html_e( 'Checkout', 'sober' ); ?></span>
-        </a>
+			<?php echo esc_html( $product->single_add_to_cart_text() ); ?>
+		</button>
 
 		<?php
 		/**
