@@ -63,7 +63,7 @@ $col    = 1;
          $formatted_address = WC()->countries->get_formatted_address( $address );
         if ( !$formatted_address ){
 
-            if($num++ == 0 ){
+            if($num == 0 ){
             ?>
             <div class="u-column<?php echo ( ( $col = $col * -1 ) < 0 ) ? 1 : 2; ?> col-<?php echo ( ( $oldcol = $oldcol * -1 ) < 0 ) ? 1 : 2; ?> woocommerce-Address">
                 <header class="woocommerce-Address-title title">
@@ -77,7 +77,7 @@ $col    = 1;
             <?php }
 
         }else{
-
+            $num++;
         ?>
             <div class="u-column<?php echo ( ( $col = $col * -1 ) < 0 ) ? 1 : 2; ?> col-<?php echo ( ( $oldcol = $oldcol * -1 ) < 0 ) ? 1 : 2; ?> woocommerce-Address">
                 <header class="woocommerce-Address-title title">
