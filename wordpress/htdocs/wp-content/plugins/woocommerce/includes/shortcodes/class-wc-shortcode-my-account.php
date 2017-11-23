@@ -186,6 +186,7 @@ class WC_Shortcode_My_Account {
 			$address[ $key ]['value'] = apply_filters( 'woocommerce_my_account_edit_address_field_value', $value, $key, $load_address );
 		}
 
+        print_r($address);exit;
 		wc_get_template( 'myaccount/form-edit-address.php', array(
 			'load_address' 	=> $load_address,
 			'address'		=> apply_filters( 'woocommerce_address_to_edit', $address, $load_address ),
