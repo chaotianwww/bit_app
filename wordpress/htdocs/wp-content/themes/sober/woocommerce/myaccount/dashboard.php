@@ -120,7 +120,7 @@ if ( ! defined( 'ABSPATH' ) ) {
            window.open('mailto:uncle.cyan@gmail.com?subject=spade.com&body='+$("#raf-message a").html());
        });
 
-       
+
     });
 
 
