@@ -1675,8 +1675,8 @@
 						}
 
 						//$alert.html( $message );
-                        alert('success');
-						setTimeout( function () {
+                        Location.href=$('[name="checkout_url"]').val();
+						/*setTimeout( function () {
 							$alert.addClass( 'active' );
 						}, 500 );
 
@@ -1685,7 +1685,7 @@
 							setTimeout( function () {
 								$alert.removeClass( 'active' );
 							}, 5000 );
-						}
+						}*/
 					} else {
 						sober.$body.trigger( 'added_to_cart' );
 					}
