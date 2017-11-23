@@ -1642,12 +1642,12 @@
 	 * Ajaxify add to cart button on single product page
 	 */
 	sober.singeProductAjaxAddToCart = function () {
+        alert(11111111111111111);
 		if ( 'yes' !== sober.data.single_ajax_add_to_cart ) {
 			return;
 		}
 
 		sober.$body.on( 'submit', 'form.cart', function () {
-            alert(11111111111111111);
 			var $form = $( this ),
 				$button = $form.find( '.single_add_to_cart_button' ),
 				url = $form.attr( 'action' ) ? $form.attr( 'action' ) : window.location.href;
