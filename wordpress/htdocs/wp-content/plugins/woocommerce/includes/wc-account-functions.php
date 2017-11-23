@@ -88,7 +88,7 @@ function wc_get_account_menu_items() {
 		'downloads'       => get_option( 'woocommerce_myaccount_downloads_endpoint', 'downloads' ),
 		'edit-address'    => get_option( 'woocommerce_myaccount_edit_address_endpoint', 'edit-address' ),
 		'payment-methods' => get_option( 'woocommerce_myaccount_payment_methods_endpoint', 'payment-methods' ),
-		'edit-account'    => get_option( 'woocommerce_myaccount_edit_account_endpoint', 'edit-account' ),
+		/*'edit-account'    => get_option( 'woocommerce_myaccount_edit_account_endpoint', 'edit-account' ),*/
 		'customer-logout' => get_option( 'woocommerce_logout_endpoint', 'customer-logout' ),
 	);
 
@@ -98,7 +98,7 @@ function wc_get_account_menu_items() {
 		'downloads'       => __( 'Downloads', 'woocommerce' ),
 		'edit-address'    => __( 'Addresses', 'woocommerce' ),
 		'payment-methods' => __( 'Payment methods', 'woocommerce' ),
-		'edit-account'    => __( 'Account details', 'woocommerce' ),
+		/*'edit-account'    => __( 'Account details', 'woocommerce' ),*/
 		'customer-logout' => __( 'Logout', 'woocommerce' ),
 	);
 
