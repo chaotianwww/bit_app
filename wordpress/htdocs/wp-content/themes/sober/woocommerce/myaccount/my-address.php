@@ -24,7 +24,7 @@ $customer_id = get_current_user_id();
 
 if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) {
 	$get_addresses = apply_filters( 'woocommerce_my_account_get_addresses', array(
-		'shipping' => esc_html__( 'Shipping Address', 'sober' ),
+		'shipping0' => esc_html__( 'Shipping Address', 'sober' ),
         'shipping1' => esc_html__( 'Shipping Address', 'sober' ),
         'shipping2' => esc_html__( 'Shipping Address', 'sober' )
 
@@ -82,7 +82,7 @@ $col    = 1;
 <?php endforeach; ?>
 
 <?php if($num < 2){ ?>
-<div class="edit-button"><a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', 'add' ) ); ?>" class="edit button">add more shipping address</a></div>
+<div class="edit-button"><a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', 'shipping'.$num ) ); ?>" class="edit button">add more shipping address</a></div>
 <? } ?>
 
 <?php if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) echo '</div>'; ?>
