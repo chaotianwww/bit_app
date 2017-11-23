@@ -1,3 +1,4 @@
+
 <?php
 /**
  * My Account Dashboard
@@ -17,7 +18,7 @@
  * @package     WooCommerce/Templates
  * @version     2.6.0
  */
-
+wp_enqueue_style( 'share_font', plugins_url( '/themes/sober/person/share_font.css', __FILE__ ), array(), '20171123' );
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
@@ -57,12 +58,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 */
 	do_action( 'woocommerce_after_my_account' );
 ?>
-<p>
-    <a id="send_email">sendmail</a></br>
-    <a id="share_face_book">share to facebook</a></br>
-    <a id="share_twitter">share to twitter</a></br>
-    <a id="share_google">share to google+</a></br>
-</p>
+<div class="woocommerce-share">
+    <button id="share_face_book" class="share-link"><i class="icon-facebook"></i>share to facebook</button>
+    <button id="share_twitter" class="share-link"><i class="icon-twitter"></i>share to twitter</button>
+    <button id="share_google" class="share-link"><i class="icon-google"></i>share to google+</button>
+</div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script>
     window.twttr = (function(d, s, id) {
