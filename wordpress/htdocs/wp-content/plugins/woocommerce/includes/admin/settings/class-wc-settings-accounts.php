@@ -133,14 +133,14 @@ class WC_Settings_Accounts extends WC_Settings_Page {
 				'desc_tip' => true,
 			),
 
-			array(
+			/*array(
 				'title'    => __( 'Edit account', 'woocommerce' ),
 				'desc'     => __( 'Endpoint for the "My account &rarr; Edit account" page.', 'woocommerce' ),
 				'id'       => 'woocommerce_myaccount_edit_account_endpoint',
 				'type'     => 'text',
 				'default'  => 'edit-account',
 				'desc_tip' => true,
-			),
+			),*/
 
 			array(
 				'title'    => __( 'Addresses', 'woocommerce' ),
