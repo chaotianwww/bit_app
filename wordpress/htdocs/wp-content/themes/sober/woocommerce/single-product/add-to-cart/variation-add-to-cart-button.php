@@ -39,7 +39,7 @@ global $product;
 		<?php /*echo esc_html( $product->single_add_to_cart_text() ); */?>
 	</button>-->
     <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="button checkout wc-forward">
-        <span class="subtotal"><?php echo WC()->cart->get_cart_subtotal() ?></span>
+        <span class="subtotal"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></span>
         <span><?php esc_html_e( 'Checkout', 'sober' ); ?></span>
     </a>
 	<input type="hidden" name="add-to-cart" value="<?php echo absint( $product->get_id() ); ?>" />
