@@ -20,6 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+echo 1;exit;
 ?>
 
 <?php wc_print_notices(); ?>
