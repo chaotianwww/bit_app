@@ -1675,7 +1675,6 @@
 						}
 
 						//$alert.html( $message );
-                        alert($('[name="checkout_url"]').val());
                         window.location.href = $('[name="checkout_url"]').val();
 						/*setTimeout( function () {
 							$alert.addClass( 'active' );
