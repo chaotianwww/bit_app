@@ -92,7 +92,7 @@ $col    = 1;
 
 <?php endforeach; ?>
 
-<?php if($total_num < 2){ ?>
+<?php if($total_num < 2 && $total_num > 0 ){ ?>
     <div class="edit-button"><a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', 'shipping'.$num ) ); ?>" class="edit button">add more shipping address</a></div>
 <?php } ?>
 
