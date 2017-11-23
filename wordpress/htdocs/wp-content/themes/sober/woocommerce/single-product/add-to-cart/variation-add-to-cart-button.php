@@ -32,12 +32,16 @@ global $product;
 	do_action( 'woocommerce_after_add_to_cart_quantity' );
 	?>
 
-	<button type="submit" class="single_add_to_cart_button button alt">
+	<!--<button type="submit" class="single_add_to_cart_button button alt">
 		<svg viewBox="0 0 20 20">
 			<use xlink:href="#basket-addtocart"></use>
 		</svg>
-		<?php echo esc_html( $product->single_add_to_cart_text() ); ?>
-	</button>
+		<?php /*echo esc_html( $product->single_add_to_cart_text() ); */?>
+	</button>-->
+    <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="button checkout wc-forward">
+        <span class="subtotal"><?php echo WC()->cart->get_cart_subtotal() ?></span>
+        <span><?php esc_html_e( 'Checkout', 'sober' ); ?></span>
+    </a>
 	<input type="hidden" name="add-to-cart" value="<?php echo absint( $product->get_id() ); ?>" />
 	<input type="hidden" name="product_id" value="<?php echo absint( $product->get_id() ); ?>" />
 	<input type="hidden" name="variation_id" class="variation_id" value="0" />
