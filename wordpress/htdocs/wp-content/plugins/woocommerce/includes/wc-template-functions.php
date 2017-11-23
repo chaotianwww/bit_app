@@ -1121,7 +1121,7 @@ if ( ! function_exists( 'woocommerce_quantity_input' ) ) {
 		if ( '' !== $args['max_value'] && $args['max_value'] < $args['min_value'] ) {
 			$args['max_value'] = $args['min_value'];
 		}
-
+    print_r($args);exit;
 		ob_start();
 
 		wc_get_template( 'global/quantity-input.php', $args );
