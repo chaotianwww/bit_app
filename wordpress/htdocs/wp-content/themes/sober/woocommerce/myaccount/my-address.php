@@ -63,7 +63,7 @@ $col    = 1;
 
          $formatted_address = WC()->countries->get_formatted_address( $address );
         if ( !$formatted_address ){
-            if($num == 0 )
+            if($num++ == 0 )
                 _e( 'You have not set up this type of address yet.', 'sober' );
         }else{
 
