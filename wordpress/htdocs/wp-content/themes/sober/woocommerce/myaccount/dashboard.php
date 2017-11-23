@@ -18,7 +18,7 @@
  * @package     WooCommerce/Templates
  * @version     2.6.0
  */
-wp_enqueue_style( 'share_font', plugins_url( '/themes/sober/person/share_font.css', __FILE__ ), array(), '20171123' );
+wp_enqueue_style( 'share_font', plugins_url( '/themes/sober/person/share_font.css', __FILE__ ), array(), '20171122' );
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
@@ -120,6 +120,7 @@ if ( ! defined( 'ABSPATH' ) ) {
            window.open('mailto:uncle.cyan@gmail.com?subject=spade.com&body='+$("#raf-message a").html());
        });
 
+        $(".woocommerce-message").addClass("woocommerce-message-bgcolor");
 
     });
 
