@@ -70,7 +70,7 @@ $col    = 1;
                     <h3><?php echo $title; ?></h3>
                 </header>
                 <address>
-                    _e( 'You have not set up this type of address yet.', 'sober' );
+                    <?php _e( 'You have not set up this type of address yet.', 'sober' );?>
                     <div class="edit-button"><a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="edit button"><?php _e( 'Edit', 'sober' ); ?></a></div>
                 </address>
             </div>
