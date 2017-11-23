@@ -70,7 +70,7 @@ $col    = 1;
 					echo $formatted_address;
 			?>
 			<div class="edit-button"><a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="edit button"><?php _e( 'Edit', 'sober' ); ?></a></div>
-            <div class="edit-button"><a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="edit button">add more shipping address</a></div>
+            <div class="edit-button"><a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', 'add' ) ); ?>" class="edit button">add more shipping address</a></div>
 		</address>
 	</div>
 
