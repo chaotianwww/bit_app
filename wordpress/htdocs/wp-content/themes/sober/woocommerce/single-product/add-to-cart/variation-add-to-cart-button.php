@@ -19,20 +19,22 @@ global $product;
 	 * @since 3.0.0.
 	 */
 	do_action( 'woocommerce_before_add_to_cart_quantity' );
-	woocommerce_quantity_input( array(
+	/*woocommerce_quantity_input( array(
 		'min_value'   => apply_filters( 'woocommerce_quantity_input_min', method_exists( $product, 'get_min_purchase_quantity' ) ? $product->get_min_purchase_quantity() : 1, $product ),
 		'max_value'   => apply_filters( 'woocommerce_quantity_input_max', method_exists( $product, 'get_max_purchase_quantity' ) ? $product->get_max_purchase_quantity() : ($product->backorders_allowed() ? '' : $product->get_stock_quantity()), $product ),
 		'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : ( method_exists( $product, 'get_min_purchase_quantity' ) ? $product->get_min_purchase_quantity() : 1 ),
-	) );
+	) );*/
+    ?>
+
+    <button class="price direct-purchase">直购价</button>
+    <?php 
 
 	/**
 	 * @since 3.0.0.
 	 */
 	do_action( 'woocommerce_after_add_to_cart_quantity' );
 	?>
-
-	<button type="submit" class="single_add_to_cart_button button alt">
-
+	<button type="submit" class="single_add_to_cart_button button alt price friendeal">
         <?php esc_html_e( 'Checkout', 'sober' ); ?>
 	</button>
     <!--<a href="<?php /*echo esc_url( wc_get_checkout_url() ); */?>" class="button checkout wc-forward">
