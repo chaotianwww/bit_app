@@ -67,7 +67,7 @@ function sober_scripts() {
 	if ( sober_get_option( 'added_to_cart_notice' ) ) {
 		wp_enqueue_script( 'notify' );
 	}
-
+echo $version;exit;
 	wp_register_script( 'sober', get_template_directory_uri() . '/js/script.js', array(
 		'jquery',
 		'imagesloaded',
@@ -75,7 +75,7 @@ function sober_scripts() {
 		'owl-carousel',
 		'jquery-fitvids',
 		'simple-scrollbar',
-	), 2.06, true );
+	), $version, true );
 
 	wp_enqueue_script( 'sober' );
 	wp_localize_script( 'sober', 'soberData', array(
