@@ -75,7 +75,7 @@ function sober_scripts() {
 		'owl-carousel',
 		'jquery-fitvids',
 		'simple-scrollbar',
-	), $version, true );
+	), 2.06, true );
 
 	wp_enqueue_script( 'sober' );
 	wp_localize_script( 'sober', 'soberData', array(
