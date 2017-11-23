@@ -36,7 +36,6 @@ if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) {
 $oldcol = 1;
 $col    = 1;
 ?>
-1111111111111
 <!--<p>-->
 <!--	--><?php //echo apply_filters( 'woocommerce_my_account_my_address_description', esc_html__( 'The following addresses will be used on the checkout page by default.', 'sober' ) ); ?>
 <!--</p>-->
@@ -71,6 +70,7 @@ $col    = 1;
 					echo $formatted_address;
 			?>
 			<div class="edit-button"><a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="edit button"><?php _e( 'Edit', 'sober' ); ?></a></div>
+            <div class="edit-button"><a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="edit button">add more shipping address</a></div>
 		</address>
 	</div>
 
