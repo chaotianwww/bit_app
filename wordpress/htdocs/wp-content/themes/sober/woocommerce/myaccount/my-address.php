@@ -24,9 +24,9 @@ $customer_id = get_current_user_id();
 
 if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) {
 	$get_addresses = apply_filters( 'woocommerce_my_account_get_addresses', array(
-		'shipping2' => esc_html__( 'Shipping Address', 'sober' ),
-        'shipping3' => esc_html__( 'Shipping Address', 'sober' ),
-        'shipping4' => esc_html__( 'Shipping Address', 'sober' )
+		'shipping0' => esc_html__( 'Shipping Address', 'sober' ),
+        'shipping1' => esc_html__( 'Shipping Address', 'sober' ),
+        'shipping2' => esc_html__( 'Shipping Address', 'sober' )
 
 	), $customer_id );
 } else {
