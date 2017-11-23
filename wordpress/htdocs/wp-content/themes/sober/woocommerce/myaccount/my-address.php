@@ -44,39 +44,48 @@ $col    = 1;
 
 <?php if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) echo '<div class="u-columns woocommerce-Addresses col2-set addresses">'; ?>
 
+<?php $num = 0; ?>
 <?php foreach ( $get_addresses as $name => $title ) : ?>
 
-	<div class="u-column<?php echo ( ( $col = $col * -1 ) < 0 ) ? 1 : 2; ?> col-<?php echo ( ( $oldcol = $oldcol * -1 ) < 0 ) ? 1 : 2; ?> woocommerce-Address">
-		<header class="woocommerce-Address-title title">
-			<h3><?php echo $title; ?></h3>
-		</header>
-		<address>
-			<?php
-				$address = apply_filters( 'woocommerce_my_account_my_address_formatted_address', array(
-					'first_name'  => get_user_meta( $customer_id, $name . '_first_name', true ),
-					'last_name'   => get_user_meta( $customer_id, $name . '_last_name', true ),
-					'company'     => get_user_meta( $customer_id, $name . '_company', true ),
-					'address_1'   => get_user_meta( $customer_id, $name . '_address_1', true ),
-					'address_2'   => get_user_meta( $customer_id, $name . '_address_2', true ),
-					'city'        => get_user_meta( $customer_id, $name . '_city', true ),
-					'state'       => get_user_meta( $customer_id, $name . '_state', true ),
-					'postcode'    => get_user_meta( $customer_id, $name . '_postcode', true ),
-					'country'     => get_user_meta( $customer_id, $name . '_country', true )
-				), $customer_id, $name );
+    <?php
 
-				$formatted_address = WC()->countries->get_formatted_address( $address );
+        $address = apply_filters( 'woocommerce_my_account_my_address_formatted_address', array(
+            'first_name'  => get_user_meta( $customer_id, $name . '_first_name', true ),
+            'last_name'   => get_user_meta( $customer_id, $name . '_last_name', true ),
+            'company'     => get_user_meta( $customer_id, $name . '_company', true ),
+            'address_1'   => get_user_meta( $customer_id, $name . '_address_1', true ),
+            'address_2'   => get_user_meta( $customer_id, $name . '_address_2', true ),
+            'city'        => get_user_meta( $customer_id, $name . '_city', true ),
+            'state'       => get_user_meta( $customer_id, $name . '_state', true ),
+            'postcode'    => get_user_meta( $customer_id, $name . '_postcode', true ),
+            'country'     => get_user_meta( $customer_id, $name . '_country', true )
+        ), $customer_id, $name );
 
-				if ( ! $formatted_address )
-					_e( 'You have not set up this type of address yet.', 'sober' );
-				else
-					echo $formatted_address;
-			?>
-			<div class="edit-button"><a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="edit button"><?php _e( 'Edit', 'sober' ); ?></a></div>
-		</address>
-	</div>
+         $formatted_address = WC()->countries->get_formatted_address( $address );
+        if ( !$formatted_address ){
+            if($num == 0 )
+                _e( 'You have not set up this type of address yet.', 'sober' );
+        }else{
+
+        ?>
+
+            <div class="u-column<?php echo ( ( $col = $col * -1 ) < 0 ) ? 1 : 2; ?> col-<?php echo ( ( $oldcol = $oldcol * -1 ) < 0 ) ? 1 : 2; ?> woocommerce-Address">
+                <header class="woocommerce-Address-title title">
+                    <h3><?php echo $title; ?></h3>
+                </header>
+                <address>
+                    <?php
+                            echo $formatted_address;
+                    ?>
+                    <div class="edit-button"><a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="edit button"><?php _e( 'Edit', 'sober' ); ?></a></div>
+                </address>
+            </div>
+        <? } ?>
 
 <?php endforeach; ?>
 
-<!--<div class="edit-button"><a href="<?php /*echo esc_url( wc_get_endpoint_url( 'edit-address', 'add' ) ); */?>" class="edit button">add more shipping address</a></div>-->
+<?php if($num < 2){ ?>
+<div class="edit-button"><a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', 'add' ) ); ?>" class="edit button">add more shipping address</a></div>
+<? } ?>
 
 <?php if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) echo '</div>'; ?>
