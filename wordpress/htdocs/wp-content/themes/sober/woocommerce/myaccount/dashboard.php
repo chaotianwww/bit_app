@@ -18,7 +18,6 @@
  * @package     WooCommerce/Templates
  * @version     2.6.0
  */
-wp_enqueue_style( 'share_font', plugins_url( '/themes/sober/person/share_font.css', __FILE__ ), array(), '20171122' );
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
