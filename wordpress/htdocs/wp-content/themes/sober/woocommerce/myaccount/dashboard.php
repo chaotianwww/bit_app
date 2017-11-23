@@ -93,12 +93,13 @@ if ( ! defined( 'ABSPATH' ) ) {
                 }, function(response){});
         });
     };
-    $(document).ready(function(){
-       $("#send_email").click(function(){
+    $(document).ready(function() {
+        $("#send_email").click(function () {
 
-           console.log('$("#raf-message a").html():'+$("#raf-message a").html());
-           window.open('mailto:uncle.cyan@gmail.com?subject=spade.com&body='+$("#raf-message a").html());
-       });
+            console.log('$("#raf-message a").html():' + $("#raf-message a").html());
+            window.open('mailto:uncle.cyan@gmail.com?subject=spade.com&body=' + $("#raf-message a").html());
+        });
 
+    });
 
 </script>
