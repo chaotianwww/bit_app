@@ -25,6 +25,9 @@ global $product;
 		'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : ( method_exists( $product, 'get_min_purchase_quantity' ) ? $product->get_min_purchase_quantity() : 1 ),
 	) );*/
     ?>
+    <?php
+    print_r($product)
+    ?>
 
     <button class="price direct-purchase">直购价</button>
     <?php
