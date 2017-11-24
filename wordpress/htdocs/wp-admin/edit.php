@@ -83,7 +83,6 @@ if ( $doaction ) {
 		if ( get_post_status_object( $post_status ) ) {
 			$post_ids = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_type=%s AND post_status = %s", $post_type, $post_status ) );
 		}
-        print_r($post_ids);exit;
 		$doaction = 'delete';
 	} elseif ( isset( $_REQUEST['media'] ) ) {
 		$post_ids = $_REQUEST['media'];
@@ -342,7 +341,7 @@ unset( $messages );
 
 $_SERVER['REQUEST_URI'] = remove_query_arg( array( 'locked', 'skipped', 'updated', 'deleted', 'trashed', 'untrashed' ), $_SERVER['REQUEST_URI'] );
 ?>
-
+<?php print_r($wp_list_table);exit;?>
 <?php $wp_list_table->views(); ?>
 
 <form id="posts-filter" method="get">
@@ -365,6 +364,7 @@ $_SERVER['REQUEST_URI'] = remove_query_arg( array( 'locked', 'skipped', 'updated
 </form>
 
 <?php
+
 if ( $wp_list_table->has_items() )
 	$wp_list_table->inline_edit();
 ?>
