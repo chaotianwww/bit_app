@@ -221,6 +221,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 </div>
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
             var tmpHtml =$(".the_champ_outer_login_container").html();
