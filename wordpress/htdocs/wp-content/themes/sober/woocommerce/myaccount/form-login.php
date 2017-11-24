@@ -157,9 +157,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</label>
 			</p>
 			<p class="form-row">
-				<input type="hidden" name="login" value="<?php esc_attr_e( 'Log In', 'sober' ); ?>" />
+				<input type="hidden" name="login" value="<?php esc_attr_e( 'Login', 'sober' ); ?>" />
 				<button type="submit" class="woocommerce-Button button">
-					<span class="button-text"><?php esc_html_e( 'Login', 'sober' ); ?></span>
+					<span class="button-text"><?php esc_html_e( 'Log In', 'sober' ); ?></span>
 					<span class="loading-icon">
 						<span class="bubble"><span class="dot"></span></span>
 						<span class="bubble"><span class="dot"></span></span>
