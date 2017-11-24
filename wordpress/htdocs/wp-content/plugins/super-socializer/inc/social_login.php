@@ -17,7 +17,7 @@ function the_champ_login_button($widget = false){
 		}elseif(isset($theChampLoginOptions['providers']) && is_array($theChampLoginOptions['providers']) && count($theChampLoginOptions['providers']) > 0){
 			$html = the_champ_login_notifications($theChampLoginOptions);
 			if(!$widget){
-				$html .= '<div class="the_champ_outer_login_container testtesttest">';
+				$html .= '<div class="the_champ_outer_login_container">';
 			}
 			$html .= '<div class="the_champ_login_container"><ul class="the_champ_login_ul">';
 			if(isset($theChampLoginOptions['providers']) && is_array($theChampLoginOptions['providers']) && count($theChampLoginOptions['providers']) > 0){

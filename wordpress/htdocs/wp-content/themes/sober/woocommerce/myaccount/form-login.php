@@ -114,8 +114,6 @@ if ( ! defined( 'ABSPATH' ) ) {
     </style>
 <?php wc_print_notices(); ?>
 
-<?php do_action( 'woocommerce_before_customer_login_form' ); ?>
-
 <?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
 
 <h2 class="text-center login-tabs-nav tabs-nav">
@@ -134,6 +132,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<form class="woocommerce-form woocommerce-form-login login" method="post">
 
+            <?php do_action( 'woocommerce_before_customer_login_form' ); ?>
+            
 			<?php do_action( 'woocommerce_login_form_start' ); ?>
 
 			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
