@@ -133,7 +133,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<form class="woocommerce-form woocommerce-form-login login" method="post">
 
             <?php do_action( 'woocommerce_before_customer_login_form' ); ?>
-            
+
 			<?php do_action( 'woocommerce_login_form_start' ); ?>
 
 			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
@@ -180,6 +180,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="u-column2 col-2 tab-panel" data-tab="register">
 
 		<form method="post" class="register">
+
+            <?php do_action( 'woocommerce_login_form_start' ); ?>
 
 			<?php do_action( 'woocommerce_register_form_start' ); ?>
 

@@ -39,9 +39,9 @@ function the_champ_login_button($widget = false){
 						$html .= '" onclick="theChampInitiateLogin(this)" >';
 					}
                     if(isset($theChampLoginOptions['title']) && $theChampLoginOptions['title'] != ''){
-                        $html .= '<ss style="display:block" class="theChampLoginSvg theChamp'. ucfirst($provider) .'LoginSvg"></ss>'.$theChampLoginOptions['title'].'</i></li>';
+                        $html .= '<ss  class="theChampLoginSvg theChamp'. ucfirst($provider) .'LoginSvg"></ss>'.$theChampLoginOptions['title'].'</i></li>';
                     }else{
-                        $html .= '<ss style="display:block" class="theChampLoginSvg theChamp'. ucfirst($provider) .'LoginSvg"></ss></i></li>';
+                        $html .= '<ss  class="theChampLoginSvg theChamp'. ucfirst($provider) .'LoginSvg"></ss></i></li>';
                     }
 
 				}
@@ -51,6 +51,7 @@ function the_champ_login_button($widget = false){
 				$html .= '</div><div style="clear:both; margin-bottom: 6px"></div>';
 			}
 		}
+        $html .= '<div class="the_champ_login_hr"><div>or</div><hr/></div>';
 		if(!$widget){
 			echo $html;
 		}else{
