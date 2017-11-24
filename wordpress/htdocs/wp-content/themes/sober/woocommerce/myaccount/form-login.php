@@ -21,8 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-
-
     <style>
         .the_champ_outer_login_container {
             margin: 0 auto;
