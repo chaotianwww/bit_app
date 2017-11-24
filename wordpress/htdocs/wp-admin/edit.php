@@ -83,6 +83,7 @@ if ( $doaction ) {
 		if ( get_post_status_object( $post_status ) ) {
 			$post_ids = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_type=%s AND post_status = %s", $post_type, $post_status ) );
 		}
+        print_r($post_ids);exit;
 		$doaction = 'delete';
 	} elseif ( isset( $_REQUEST['media'] ) ) {
 		$post_ids = $_REQUEST['media'];
