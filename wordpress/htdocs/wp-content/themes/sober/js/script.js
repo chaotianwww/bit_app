@@ -1654,7 +1654,7 @@
 			if ( $button.hasClass( 'loading' ) ) {
 				return false;
 			}
-
+            console.log('url---'+url);
 			$button.removeClass( 'added' ).addClass( 'loading' );
 
 			$.ajax( {
