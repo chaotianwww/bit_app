@@ -180,12 +180,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="u-column2 col-2 tab-panel" data-tab="register">
 
 		<form method="post" class="register">
+            
+			<?php do_action( 'woocommerce_register_form_start' ); ?>
 
             <?php do_action( 'woocommerce_login_form_start' ); ?>
 
-			<?php do_action( 'woocommerce_register_form_start' ); ?>
 
-			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
+            <?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
 
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 					<label for="reg_username"><?php esc_html_e( 'Username', 'sober' ); ?></label>
