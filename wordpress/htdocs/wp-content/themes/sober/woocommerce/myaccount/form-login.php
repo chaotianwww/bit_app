@@ -152,7 +152,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<p class="form-row">
 				<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
 				<label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
-					<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php esc_html_e( 'Remember me', 'sober' ); ?></span>
+					<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" />
+                    <p class="woocommerce-LostPassword lost_password">
+                        <a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php esc_html_e( 'Lost your password?', 'sober' ); ?></a>
+                    </p>
 				</label>
 			</p>
 			<p class="form-row">
@@ -166,9 +169,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</span>
 				</button>
 			</p>
-			<p class="woocommerce-LostPassword lost_password">
-				<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php esc_html_e( 'Lost your password?', 'sober' ); ?></a>
-			</p>
+
 
 			<?php do_action( 'woocommerce_login_form_end' ); ?>
 
