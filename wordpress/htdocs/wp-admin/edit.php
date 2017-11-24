@@ -341,7 +341,6 @@ unset( $messages );
 
 $_SERVER['REQUEST_URI'] = remove_query_arg( array( 'locked', 'skipped', 'updated', 'deleted', 'trashed', 'untrashed' ), $_SERVER['REQUEST_URI'] );
 ?>
-<?php print_r($wp_list_table);exit;?>
 <?php $wp_list_table->views(); ?>
 
 <form id="posts-filter" method="get">
@@ -366,7 +365,7 @@ $_SERVER['REQUEST_URI'] = remove_query_arg( array( 'locked', 'skipped', 'updated
 <?php
 
 if ( $wp_list_table->has_items() )
-	$wp_list_table->inline_edit();
+	/*$wp_list_table->inline_edit();*/
 ?>
 
 <div id="ajax-response"></div>
