@@ -49,7 +49,8 @@ function _get_list_table( $class, $args = array() ) {
 			$args['screen'] = get_current_screen();
 		else
 			$args['screen'] = null;
-
+print_r($args);exit;
+        print_r($class( $args ));exit;
 		return new $class( $args );
 	}
 
