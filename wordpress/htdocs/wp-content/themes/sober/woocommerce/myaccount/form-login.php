@@ -117,8 +117,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
 
 <h2 class="text-center login-tabs-nav tabs-nav">
-	<span class="line-hover tab-nav active" data-tab="login"><?php esc_html_e( 'Login', 'sober' ); ?></span>
-	<span class="line-hover tab-nav" data-tab="register"><?php esc_html_e( 'Register', 'sober' ); ?></span>
+	<span class="line-hover tab-nav active" data-tab="login"><?php esc_html_e( 'Log In', 'sober' ); ?></span>
+	<span class="line-hover tab-nav" data-tab="register"><?php esc_html_e( 'Sign Up', 'sober' ); ?></span>
 </h2>
 
 <div class="u-columns col2-set tab-panels" id="customer_login">
@@ -157,7 +157,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</label>
 			</p>
 			<p class="form-row">
-				<input type="hidden" name="login" value="<?php esc_attr_e( 'Login', 'sober' ); ?>" />
+				<input type="hidden" name="login" value="<?php esc_attr_e( 'Log In', 'sober' ); ?>" />
 				<button type="submit" class="woocommerce-Button button">
 					<span class="button-text"><?php esc_html_e( 'Login', 'sober' ); ?></span>
 					<span class="loading-icon">
@@ -213,7 +213,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<p class="woocommerce-FormRow form-row">
 				<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
-				<input type="submit" class="woocommerce-Button button" name="register" value="<?php esc_attr_e( 'Register', 'sober' ); ?>" />
+				<input type="submit" class="woocommerce-Button button" name="register" value="<?php esc_attr_e( 'Sign Up', 'sober' ); ?>" />
 			</p>
 
 			<?php do_action( 'woocommerce_register_form_end' ); ?>
