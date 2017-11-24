@@ -221,12 +221,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 </div>
 
-    <script>
-        $(document).ready(function(){
-            var tmpHtml =$(".the_champ_outer_login_container").html();
-            $(".the_champ_outer_login_container").remove();
-            $(".woocommerce-form-login").prepend(tmpHtml);
-        });
-    </script>
 <?php endif; ?>
 <?php do_action( 'woocommerce_after_customer_login_form' ); ?>

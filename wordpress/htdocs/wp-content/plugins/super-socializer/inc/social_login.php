@@ -18,9 +18,6 @@ function the_champ_login_button($widget = false){
 			$html = the_champ_login_notifications($theChampLoginOptions);
 			if(!$widget){
 				$html .= '<div class="the_champ_outer_login_container">';
-				if(isset($theChampLoginOptions['title']) && $theChampLoginOptions['title'] != ''){
-					$html .= '<div class="the_champ_social_login_title">'. $theChampLoginOptions['title'] .'</div>';
-				}
 			}
 			$html .= '<div class="the_champ_login_container"><ul class="the_champ_login_ul">';
 			if(isset($theChampLoginOptions['providers']) && is_array($theChampLoginOptions['providers']) && count($theChampLoginOptions['providers']) > 0){
@@ -41,7 +38,12 @@ function the_champ_login_button($widget = false){
 					}else{
 						$html .= '" onclick="theChampInitiateLogin(this)" >';
 					}
-					$html .= '<ss style="display:block" class="theChampLoginSvg theChamp'. ucfirst($provider) .'LoginSvg"></ss></i></li>';
+                    if(isset($theChampLoginOptions['title']) && $theChampLoginOptions['title'] != ''){
+                        $html .= '<ss style="display:block" class="theChampLoginSvg theChamp'. ucfirst($provider) .'LoginSvg"></ss>'.$theChampLoginOptions['title'].'</i></li>';
+                    }else{
+                        $html .= '<ss style="display:block" class="theChampLoginSvg theChamp'. ucfirst($provider) .'LoginSvg"></ss></i></li>';
+                    }
+
 				}
 			}
 			$html .= '</ul></div>';
