@@ -180,7 +180,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="u-column2 col-2 tab-panel" data-tab="register">
 
 		<form method="post" class="register">
-            
+1111111111111111111111111111111111111111121212
 			<?php do_action( 'woocommerce_register_form_start' ); ?>
 
             <?php do_action( 'woocommerce_login_form_start' ); ?>
