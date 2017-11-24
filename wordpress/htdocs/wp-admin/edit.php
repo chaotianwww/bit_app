@@ -358,14 +358,14 @@ $_SERVER['REQUEST_URI'] = remove_query_arg( array( 'locked', 'skipped', 'updated
 <input type="hidden" name="show_sticky" value="1" />
 <?php } ?>
 
-<?php $wp_list_table->display(); ?>
+<?php/* $wp_list_table->display();*/ ?>
 
 </form>
 
 <?php
 
 if ( $wp_list_table->has_items() )
-	/*$wp_list_table->inline_edit();*/
+	$wp_list_table->inline_edit();
 ?>
 
 <div id="ajax-response"></div>
