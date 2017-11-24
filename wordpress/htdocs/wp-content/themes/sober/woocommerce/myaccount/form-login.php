@@ -28,10 +28,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
 
-<!--<h2 class="text-center login-tabs-nav tabs-nav">
-	<span class="line-hover tab-nav active" data-tab="login"><?php /*esc_html_e( 'Login', 'sober' ); */?></span>
-	<span class="line-hover tab-nav" data-tab="register"><?php /*esc_html_e( 'Register', 'sober' ); */?></span>
-</h2>-->
+<h2 class="text-center login-tabs-nav tabs-nav">
+	<span class="line-hover tab-nav active" data-tab="login"><?php esc_html_e( 'Login', 'sober' ); ?></span>
+	<span class="line-hover tab-nav" data-tab="register"><?php esc_html_e( 'Register', 'sober' ); ?></span>
+</h2>
 
 <div class="u-columns col2-set tab-panels" id="customer_login">
 
