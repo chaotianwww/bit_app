@@ -30,6 +30,10 @@ function wc_protected_product_add_to_cart( $passed, $product_id ) {
 }
 add_filter( 'woocommerce_add_to_cart_validation', 'wc_protected_product_add_to_cart', 10, 2 );
 
+function empty_cart_before_add_to_cart() {
+    WC()->cart->empty_cart();
+}
+add_action( 'woocommerce_add_to_cart_handler', 'empty_cart_before_add_to_cart' );
 /**
  * Clears the cart session when called.
  */
