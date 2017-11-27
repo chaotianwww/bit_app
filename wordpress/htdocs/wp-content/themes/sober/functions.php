@@ -21,14 +21,6 @@ function sober_content_width() {
 
 add_action( 'after_setup_theme', 'sober_content_width', 0 );
 
-add_filter ('add_to_cart_redirect', 'themepark_redirect_to_checkout');
-function themepark_redirect_to_checkout() {
-    global $woocommerce;
-    if(!empty($_POST["checkout"])){
-        $checkout_url = $woocommerce->cart->get_checkout_url();
-        return $checkout_url;
-    }
-}
 
 if ( ! function_exists( 'sober_setup' ) ) :
 	/**
