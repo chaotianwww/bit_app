@@ -189,6 +189,8 @@ class Gens_RAF {
 		$this->loader->add_action('woocommerce_checkout_update_order_meta', $plugin_public, 'save_raf_id');
 		//Show referal link on My Account Page
 		$this->loader->add_action('woocommerce_before_my_account', $plugin_public, 'account_page_show_link');
+        //Show referal link on My Account Page
+        $this->loader->add_action('woocommerce_after_payment_share', $plugin_public, 'account_page_show_order_link');
 		//Show unused referral coupons
 		$this->loader->add_action('woocommerce_before_my_account', $plugin_public, 'account_page_show_coupons');
 		//Remove Cookie after checkout if Setting is set

@@ -37,9 +37,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</p>
 
 		<?php else : ?>
-            <div id="raf-message" class="woocommerce-message woocommerce-message-bgcolor">
-                invite your friend to get this deal together ! <a href="https://spade.cool?raf=ref9822186">https://spade.cool?raf=ref9822186</a>
-            </div>
+
+         <?php  do_action( 'woocommerce_before_my_account' ); ?>
             <div class="woocommerce-share">
                 <button id="share_face_book" class="share-link"><i class="icon-facebook"></i>share to facebook</button>
                 <button id="share_twitter" class="share-link"><i class="icon-twitter"></i>share to twitter</button>
@@ -119,7 +118,6 @@ if ( ! defined( 'ABSPATH' ) ) {
                 });
 
                 $("#share_face_book").click(function(){
-                    alert('xxx');
                     console.log('$("#raf-message a").html():'+$("#raf-message a").html());
                     FB.ui(
                         {
@@ -134,6 +132,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     console.log('$("#raf-message a").html():'+$("#raf-message a").html());
                     window.open('mailto:uncle.cyan@gmail.com?subject=spade.com&body='+$("#raf-message a").html());
                 });
+                $(".woocommerce-message").addClass("woocommerce-message-bgcolor");
 
             });
 
