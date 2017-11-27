@@ -1636,7 +1636,6 @@ if ( ! function_exists( 'woocommerce_checkout_payment' ) ) {
 		} else {
 			$available_gateways = array();
 		}
-        print_r(WC()->checkout());exit;
 		wc_get_template( 'checkout/payment.php', array(
 			'checkout'           => WC()->checkout(),
 			'available_gateways' => $available_gateways,
