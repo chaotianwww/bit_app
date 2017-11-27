@@ -26,7 +26,7 @@ global $product;
 	) );*/
     ?>
 
-    <button  type="submit" name="direct" value="1"  class="single_add_to_cart_button price direct-purchase"><?php esc_html_e( '直购价　$'.$product->price*10, 'sober' ); ?></button>
+    <input  type="submit" name="direct" value="<?php esc_html_e( '直购价　$'.$product->price*10, 'sober' ); ?>"  class="single_add_to_cart_button price direct-purchase" />
     <?php
 
 	/**
