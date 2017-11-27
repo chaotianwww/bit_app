@@ -26,7 +26,7 @@ global $product;
 	) );*/
     ?>
 
-    <button  type="button"  class="check_this price direct-purchase"  onclick="javascript:location.href=<?php echo esc_url( wc_get_checkout_url()).'?add-to-cart='.absint( $product->get_id() ); ?>?"><?php esc_html_e( '直购价　$'.$product->price*10, 'sober' ); ?></button>
+    <a  type="button"  class="check_this price direct-purchase"  href="<?php echo esc_url( wc_get_checkout_url()).'?add-to-cart='.absint( $product->get_id() ); ?>?"><?php esc_html_e( '直购价　$'.$product->price*10, 'sober' ); ?></a>
     <?php
 
 	/**
