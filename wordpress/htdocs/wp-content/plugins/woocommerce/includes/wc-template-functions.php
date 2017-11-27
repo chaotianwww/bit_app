@@ -31,7 +31,14 @@ function wc_template_redirect() {
 		// When on the checkout with an empty cart, redirect to cart page.
 		//wc_add_notice( __( 'Checkout is not available whilst your cart is empty.', 'woocommerce' ), 'notice' );
 		//wp_redirect( wc_get_page_permalink( 'shop' ) );
-		exit;
+
+
+        ob_start();
+
+        // Ensure gateways and shipping methods are loaded early.
+        WC()->payment_gateways();
+        WC()->shipping();
+		//exit;
 
 	} elseif (
 		isset( $wp->query_vars['customer-logout'] ) &&
