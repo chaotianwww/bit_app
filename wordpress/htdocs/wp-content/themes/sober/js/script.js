@@ -1675,7 +1675,7 @@
 						}
 
 						//$alert.html( $message );
-                        window.location.href = $('[name="checkout_url"]').val();
+
 						/*setTimeout( function () {
 							$alert.addClass( 'active' );
 						}, 500 );
@@ -1698,6 +1698,7 @@
 							window.location.href = wc_add_to_cart_params.cart_url;
 						}
 					}
+                    window.location.href = $('[name="checkout_url"]').val();
 				}
 			} );
 
