@@ -28,7 +28,7 @@ function wc_protected_product_add_to_cart( $passed, $product_id ) {
 	}
 	return $passed;
 }
-add_filter( 'woocommerce_add_to_cart_validation', 'wc_protected_product_add_to_car  t', 10, 2 );
+add_filter( 'woocommerce_add_to_cart_validation', 'wc_protected_product_add_to_cart', 10, 2 );
 
 /**
  * Clears the cart session when called.
