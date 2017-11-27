@@ -160,6 +160,7 @@ function sober_widgets_init() {
 	}
 }
 
+
 add_action( 'widgets_init', 'sober_widgets_init' );
 
 
