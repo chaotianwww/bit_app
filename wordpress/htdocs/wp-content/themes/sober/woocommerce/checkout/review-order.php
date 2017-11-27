@@ -32,27 +32,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php
 			do_action( 'woocommerce_review_order_before_cart_contents' );
 
-			/*foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 				$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 
 				if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_checkout_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
-					*/?><!--
-					<tr class="<?php /*echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); */?>">
+					?>
+					<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 						<td class="product-name">
-							<?php /*echo apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key ) . '&nbsp;'; */?>
-							<?php /*echo apply_filters( 'woocommerce_checkout_cart_item_quantity', '', $cart_item, $cart_item_key ); */?>
-							<?php /*echo WC()->cart->get_item_data( $cart_item ); */?>
+							<?php echo apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key ) . '&nbsp;'; ?>
+							<?php echo apply_filters( 'woocommerce_checkout_cart_item_quantity', '', $cart_item, $cart_item_key ); ?>
+							<?php echo WC()->cart->get_item_data( $cart_item ); ?>
 						</td>
 						<td class="product-quantity">
-							<?php /*echo sprintf( '<span>&times;%s</span>', $cart_item['quantity'] ); */?>
+							<?php echo sprintf( '<span>&times;%s</span>', $cart_item['quantity'] ); ?>
 						</td>
 						<td class="product-total">
-							<?php /*echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); */?>
+							<?php echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); ?>
 						</td>
 					</tr>
-					--><?php
-/*				}
-			}*/
+					<?php
+				}
+			}
 
 			do_action( 'woocommerce_review_order_after_cart_contents' );
 		?>

@@ -96,6 +96,7 @@ final class WC_Cart_Session {
 						$cart_contents[ $key ] = apply_filters( 'woocommerce_get_cart_item_from_session', $session_data, $values, $key );
 
 						// Add to cart right away so the product is visible in woocommerce_get_cart_item_from_session hook.
+                        print_r($cart_contents);exit;
 						$this->cart->set_cart_contents( $cart_contents );
 					}
 				}
