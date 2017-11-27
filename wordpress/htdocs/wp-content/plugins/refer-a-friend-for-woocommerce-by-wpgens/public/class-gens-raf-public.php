@@ -271,10 +271,10 @@ class Gens_RAF_Public {
 	<?php
 	}
 
-    public function account_page_show_order_link() {
+    public function account_page_show_order_link($order_id) {
 
         $referral_id = $this->get_referral_id( get_current_user_id() );
-        $refLink = esc_url(add_query_arg( 'raf', $referral_id, get_home_url().'/product/testtestest' ));
+        $refLink = esc_url(add_query_arg( 'raf', $referral_id, get_home_url().'/product/testtestest?order_id='.$order_id ));
         ?>
         <div id="raf-message" class="woocommerce-message"><?php _e( 'invite your friend to get this deal together !','gens-raf'); ?> <a href="<?php echo $refLink; ?>" ><?php echo $refLink; ?></a></div>
     <?php
