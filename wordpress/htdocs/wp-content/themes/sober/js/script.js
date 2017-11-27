@@ -1656,7 +1656,6 @@
 			}
 			$button.removeClass( 'added' ).addClass( 'loading' );
 
-            alert($(this).val());
 			$.ajax( {
 				url    : url,
 				data   : $form.serialize(),

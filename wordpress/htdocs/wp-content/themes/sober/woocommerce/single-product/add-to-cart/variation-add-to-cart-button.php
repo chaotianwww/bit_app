@@ -26,7 +26,7 @@ global $product;
 	) );*/
     ?>
 
-    <button  type="submit" value="direct" class="single_add_to_cart_button price direct-purchase"><?php esc_html_e( '直购价　$'.$product->price*10, 'sober' ); ?></button>
+    <button  type="submit" name="direct" class="single_add_to_cart_button price direct-purchase"><?php esc_html_e( '直购价　$'.$product->price*10, 'sober' ); ?></button>
     <?php
 
 	/**
@@ -34,18 +34,23 @@ global $product;
 	 */
 	do_action( 'woocommerce_after_add_to_cart_quantity' );
 	?>
-	<button type="submit" value="group"  class="single_add_to_cart_button price friendeal">
+	<button type="submit" name="group"  class="single_add_to_cart_button price friendeal">
         <?php esc_html_e( '拼单价　$'.$product->price, 'sober' ); ?>
 	</button>
     <!--<a href="<?php /*echo esc_url( wc_get_checkout_url() ); */?>" class="button checkout wc-forward">
         <span class="subtotal"><?php /*echo $product->get_min_purchase_quantity */?></span>
         <span></span>
     </a>-->
-    <input type="hidden" name="direct" value="0" />
+    <input type="hidden" name="direct" value="1" />
 	<input type="hidden" name="add-to-cart" value="<?php echo absint( $product->get_id() ); ?>" />
 	<input type="hidden" name="product_id" value="<?php echo absint( $product->get_id() ); ?>" />
-	<input type="hidden" name="variation_id" class="variation_id" value="0" />
+	<input type="hidden" name="variation_id" class="variation_id" value="1" />
     <input type="hidden" name="checkout_url" value="<?php echo esc_url( wc_get_checkout_url()) ?>"/>
 
 
+    <script>
+        $('[name="group"]').click(function(){
+            $('[name="direct"]').val(0);
+        });
+    </script>
 </div>
