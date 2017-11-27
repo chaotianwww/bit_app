@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php else : ?>
             <div id="raf-message" class="woocommerce-message woocommerce-message-bgcolor">
-                invite your friend to get this deal together !: <a href="https://spade.cool?raf=ref9822186">https://spade.cool?raf=ref9822186</a>
+                invite your friend to get this deal together ! <a href="https://spade.cool?raf=ref9822186">https://spade.cool?raf=ref9822186</a>
             </div>
             <div class="woocommerce-share">
                 <button id="share_face_book" class="share-link"><i class="icon-facebook"></i>share to facebook</button>
@@ -110,8 +110,6 @@ if ( ! defined( 'ABSPATH' ) ) {
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
 
-
-
             window.fbAsyncInit = function() {
                 FB.init({
                     appId            : '1955847301339546',
@@ -121,6 +119,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 });
 
                 $("#share_face_book").click(function(){
+                    alert('xxx');
                     console.log('$("#raf-message a").html():'+$("#raf-message a").html());
                     FB.ui(
                         {
