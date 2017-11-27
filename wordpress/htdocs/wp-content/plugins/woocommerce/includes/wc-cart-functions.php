@@ -22,14 +22,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return bool
  */
 function wc_protected_product_add_to_cart( $passed, $product_id ) {
-    echo 1;exit;
 	if ( post_password_required( $product_id ) ) {
 		$passed = false;
 		wc_add_notice( __( 'This product is protected and cannot be purchased.', 'woocommerce' ), 'error' );
 	}
 	return $passed;
 }
-add_filter( 'woocommerce_add_to_cart_validation', 'wc_protected_product_add_to_cart', 10, 2 );
+add_filter( 'woocommerce_add_to_cart_validation', 'wc_protected_product_add_to_car  t', 10, 2 );
 
 /**
  * Clears the cart session when called.
@@ -90,6 +89,8 @@ function wc_get_raw_referer() {
  * @return mixed|void
  */
 function wc_add_to_cart_message( $products, $show_qty = false, $return = false ) {
+
+    echo 1;exit;
 	$titles = array();
 	$count  = 0;
 
