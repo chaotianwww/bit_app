@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 <p>
-    <?php  do_action( 'woocommerce_after_payment_share',$order->get_order_number(), $order->get_items()); ?>
+    <?php  do_action( 'woocommerce_after_payment_share',$order->get_order_number(), 'testtestestests'); ?>
 <div class="woocommerce-share">
     <button id="share_face_book" class="share-link"><i class="icon-facebook"></i>share to facebook</button>
     <button id="share_twitter" class="share-link"><i class="icon-twitter"></i>share to twitter</button>
