@@ -21,12 +21,6 @@ function sober_content_width() {
 
 add_action( 'after_setup_theme', 'sober_content_width', 0 );
 
-add_action( 'woocommerce_add_to_cart_handler', 'empty_cart_before_add_to_cart' );
-function empty_cart_before_add_to_cart() {
-    global $woocommerce;
-    $woocommerce->cart->empty_cart();
-}
-
 if ( ! function_exists( 'sober_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
