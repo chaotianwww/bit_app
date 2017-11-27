@@ -275,7 +275,9 @@ class Gens_RAF_Public {
 
 
         $order = [];
+        print_r($orders);
         foreach($orders as $key => $val){
+            print_r($val);
             $order =  $val['data'];
         }
         print_r($order);
