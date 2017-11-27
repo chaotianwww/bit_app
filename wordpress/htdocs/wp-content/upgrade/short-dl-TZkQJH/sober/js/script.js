@@ -1657,6 +1657,9 @@
 
 			$button.removeClass( 'added' ).addClass( 'loading' );
 
+            console.log("add-to-cart url"+url);
+            console.log("add-to-cart url params");
+            console.log($form.serialize());
 			$.ajax( {
 				url    : url,
 				data   : $form.serialize(),
