@@ -8,24 +8,6 @@
  */
 
 
-add_filter('post_type_link', 'wpse33551_post_type_link', 1, 3);
-
-function wpse33551_post_type_link( $link, $post = 0 ){
-    if ( $post->post_type == 'product' ){
-        return home_url( 'p/sale-' . $post->ID );
-    } else {
-        return $link;
-    }
-}
-
-add_action( 'init', 'wpse33551_rewrites_init' );
-
-function wpse33551_rewrites_init(){
-    add_rewrite_rule(
-        'p/sale-([0-9]+)?$',
-        'index.php?post_type=product&p=$matches[1]',
-        'top' );
-}
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
