@@ -36,7 +36,7 @@ function empty_cart_before_add_to_cart() {
 add_action( 'woocommerce_add_to_cart_handler', 'empty_cart_before_add_to_cart' );
 
 function bbloomer_force_cart_to_rand() {
-    if(!empty($_POST['direct'])){
+    if(!empty($_POST['direct']) && $_POST['direct'] == 1){
         $total_disc = WC()->cart->cart_contents_total * 9;
         WC()->cart->add_fee( 'Surcharge', $total_disc );
     }
