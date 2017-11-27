@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php else : ?>
 
-         <?php  do_action( 'woocommerce_before_my_account' ); ?>
+         <?php  do_action( 'woocommerce_after_payment_share' ); ?>
             <div class="woocommerce-share">
                 <button id="share_face_book" class="share-link"><i class="icon-facebook"></i>share to facebook</button>
                 <button id="share_twitter" class="share-link"><i class="icon-twitter"></i>share to twitter</button>
