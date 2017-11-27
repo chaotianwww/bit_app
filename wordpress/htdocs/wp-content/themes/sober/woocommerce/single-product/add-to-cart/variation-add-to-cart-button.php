@@ -26,7 +26,6 @@ global $product;
 	) );*/
     ?>
 
-    <input  type="submit" name="direct" value="<?php esc_html_e( '直购价　$'.$product->price*10, 'sober' ); ?>"  class="single_add_to_cart_button price direct-purchase" />
     <?php
 
 	/**
@@ -34,6 +33,7 @@ global $product;
 	 */
 	do_action( 'woocommerce_after_add_to_cart_quantity' );
 	?>
+    <input  type="submit" name="direct" value="<?php esc_html_e( '直购价　$'.$product->price*10, 'sober' ); ?>"  class="single_add_to_cart_button price direct-purchase" />
 	<button type="submit" class="single_add_to_cart_button price friendeal">
         <?php esc_html_e( '拼单价　$'.$product->price, 'sober' ); ?>
 	</button>
