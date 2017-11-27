@@ -273,9 +273,12 @@ class Gens_RAF_Public {
 
     public function account_page_show_order_link($orders) {
 
-        foreach($orders as $key => $order){
-            $order =  $order['data'];
+
+        $order = [];
+        foreach($orders as $key => $val){
+            $order =  $val['data'];
         }
+        print_r($order);
         $referral_id = $this->get_referral_id( get_current_user_id() );
         $refLink = esc_url(add_query_arg( 'raf', $referral_id, get_home_url().'/product/'.$order['name'].'?order_id='.$order['order_id']."&user_id=".get_current_user_id().'&items=xxx' ));
         ?>
