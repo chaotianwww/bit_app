@@ -36,8 +36,8 @@ function empty_cart_before_add_to_cart() {
 add_action( 'woocommerce_add_to_cart_handler', 'empty_cart_before_add_to_cart' );
 
 function bbloomer_force_cart_to_rand() {
-    $total_disc = WC()->cart->cart_contents_total*100;
-    WC()->cart->add_fee( 'force', $total_disc );
+    $total_disc = WC()->cart->cart_contents_total * 99;
+    WC()->cart->add_fee( 'direct', $total_disc );
 }
 
 add_action( 'woocommerce_cart_calculate_fees','bbloomer_force_cart_to_rand' );
