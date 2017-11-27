@@ -1674,9 +1674,9 @@
 							sober.$body.append( $alert );
 						}
 
-						$alert.html( $message );
+						//$alert.html( $message );
 
-						setTimeout( function () {
+						/*setTimeout( function () {
 							$alert.addClass( 'active' );
 						}, 500 );
 
@@ -1685,7 +1685,7 @@
 							setTimeout( function () {
 								$alert.removeClass( 'active' );
 							}, 5000 );
-						}
+						}*/
 					} else {
 						sober.$body.trigger( 'added_to_cart' );
 					}
