@@ -203,10 +203,3 @@ require get_template_directory() . '/inc/frontend/footer.php';
 require get_template_directory() . '/inc/frontend/entry.php';
 require get_template_directory() . '/inc/frontend/comments.php';
 require get_template_directory() . '/inc/frontend/breadcrumbs.php';
-
-add_filter ('add_to_cart_redirect', 'redirect_to_checkout');
-
-function redirect_to_checkout() {
-    $checkout_url = WC()->cart->get_checkout_url();
-    return $checkout_url;
-}
