@@ -1674,9 +1674,9 @@
 							sober.$body.append( $alert );
 						}
 
-						//$alert.html( $message );
+						$alert.html( $message );
 
-						/*setTimeout( function () {
+						setTimeout( function () {
 							$alert.addClass( 'active' );
 						}, 500 );
 
@@ -1685,7 +1685,7 @@
 							setTimeout( function () {
 								$alert.removeClass( 'active' );
 							}, 5000 );
-						}*/
+						}
 					} else {
 						sober.$body.trigger( 'added_to_cart' );
 					}
@@ -1698,7 +1698,7 @@
 							window.location.href = wc_add_to_cart_params.cart_url;
 						}
 					}
-                    window.location.href = $('[name="checkout_url"]').val();
+                    //window.location.href = $('[name="checkout_url"]').val();
 				}
 			} );
 

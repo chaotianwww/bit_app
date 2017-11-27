@@ -68,7 +68,7 @@ function sober_scripts() {
 	if ( sober_get_option( 'added_to_cart_notice' ) ) {
 		wp_enqueue_script( 'notify' );
 	}
-    $version = "2.1.5";
+    $version = "2.1.6";
 
 	wp_register_script( 'sober', get_template_directory_uri() . '/js/script.js', array(
 		'jquery',
