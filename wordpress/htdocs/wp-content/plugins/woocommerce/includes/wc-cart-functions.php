@@ -90,7 +90,6 @@ function wc_get_raw_referer() {
  */
 function wc_add_to_cart_message( $products, $show_qty = false, $return = false ) {
 
-    echo 1;exit;
 	$titles = array();
 	$count  = 0;
 
