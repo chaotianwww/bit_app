@@ -81,6 +81,7 @@ final class WC_Cart_Session {
 
 			foreach ( $cart as $key => $values ) {
 				$product = wc_get_product( $values['variation_id'] ? $values['variation_id'] : $values['product_id'] );
+                print_r($product);exit;
 
 				if ( ! empty( $product ) && $product->exists() && $values['quantity'] > 0 ) {
 
