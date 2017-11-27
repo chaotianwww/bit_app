@@ -1618,7 +1618,6 @@ if ( ! function_exists( 'woocommerce_order_review' ) ) {
 	 * @param bool $deprecated Deprecated param.
 	 */
 	function woocommerce_order_review( $deprecated = false ) {
-        print_r(WC()->checkout());exit;
 		wc_get_template( 'checkout/review-order.php', array( 'checkout' => WC()->checkout() ) );
 	}
 }
