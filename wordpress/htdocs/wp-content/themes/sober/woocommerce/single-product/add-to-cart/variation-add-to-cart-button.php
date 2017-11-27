@@ -47,10 +47,4 @@ global $product;
 	<input type="hidden" name="variation_id" class="variation_id" value="1" />
     <input type="hidden" name="checkout_url" value="<?php echo esc_url( wc_get_checkout_url()) ?>"/>
 
-
-    <script>
-        $('[name="group"]').click(function(){
-            $('[name="direct"]').val(0);
-        });
-    </script>
 </div>

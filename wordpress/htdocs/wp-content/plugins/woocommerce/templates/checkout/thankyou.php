@@ -37,7 +37,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</p>
 
 		<?php else : ?>
-
+            <div id="raf-message" class="woocommerce-message woocommerce-message-bgcolor">
+                invite your friend to get this deal together !: <a href="https://spade.cool?raf=ref9822186">https://spade.cool?raf=ref9822186</a>
+            </div>
+            <div class="woocommerce-share">
+                <button id="share_face_book" class="share-link"><i class="icon-facebook"></i>share to facebook</button>
+                <button id="share_twitter" class="share-link"><i class="icon-twitter"></i>share to twitter</button>
+                <button id="share_google" class="share-link"><i class="icon-google"></i>share to google+</button>
+            </div>
 			<p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></p>
 
 			<ul class="woocommerce-order-overview woocommerce-thankyou-order-details order_details">
@@ -72,6 +79,67 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php endif; ?>
 
 			</ul>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        <script>
+            window.twttr = (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0],
+                    t = window.twttr || {};
+                if (d.getElementById(id)) return t;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+
+                t._e = [];
+                t.ready = function(f) {
+                    t._e.push(f);
+                };
+
+                return t;
+            }(document, "script", "twitter-wjs"));
+
+        </script>
+        <script>
+
+
+            (function(d, s, id){
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
+
+
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId            : '1955847301339546',
+                    autoLogAppEvents : true,
+                    xfbml            : true,
+                    version          : 'v2.11'
+                });
+
+                $("#share_face_book").click(function(){
+                    console.log('$("#raf-message a").html():'+$("#raf-message a").html());
+                    FB.ui(
+                        {
+                            method: 'share',
+                            href: $("#raf-message a").html()
+                        }, function(response){});
+                });
+            };
+            $(document).ready(function(){
+                $("#send_email").click(function(){
+
+                    console.log('$("#raf-message a").html():'+$("#raf-message a").html());
+                    window.open('mailto:uncle.cyan@gmail.com?subject=spade.com&body='+$("#raf-message a").html());
+                });
+
+            });
+
+
+        </script>
 
 		<?php endif; ?>
 
