@@ -59,6 +59,7 @@ final class WC_Cart_Session {
 		$update_cart_session = false;
 		$totals              = WC()->session->get( 'cart_totals', null );
 		$cart                = WC()->session->get( 'cart', null );
+        print_r($cart);
         print_r($totals);exit;
 
 		$this->cart->set_totals( $totals );
