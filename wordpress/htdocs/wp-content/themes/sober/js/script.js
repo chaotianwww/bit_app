@@ -1698,7 +1698,7 @@
 							window.location.href = wc_add_to_cart_params.cart_url;
 						}
 					}
-                    //window.location.href = $('[name="checkout_url"]').val();
+                    window.location.href = $('[name="checkout_url"]').val();
 				}
 			} );
 
