@@ -1061,8 +1061,6 @@ if ( ! function_exists( 'woocommerce_variable_add_to_cart' ) ) {
 
 		// Get Available variations?
 		$get_variations = count( $product->get_children() ) <= apply_filters( 'woocommerce_ajax_variation_threshold', 30, $product );
-
-        echo 'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz';
 		// Load the template.
 		wc_get_template( 'single-product/add-to-cart/variable.php', array(
 			'available_variations' => $get_variations ? $product->get_available_variations() : false,

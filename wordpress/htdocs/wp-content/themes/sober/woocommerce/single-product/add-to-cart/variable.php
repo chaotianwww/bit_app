@@ -18,7 +18,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
+echo 'reffffffffffffffffffffffffffffff'.$_GET['ref'];
 global $product;
 
 $attribute_keys = array_keys( $attributes );
