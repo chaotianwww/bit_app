@@ -276,24 +276,32 @@ class Gens_RAF_Public {
         foreach($orders['item'] as $tmp_item_id => $val){
             $order =  $val->get_product();
         }
-       // $referral_id = $this->get_referral_id( get_current_user_id() );
-        $refTmpLink = esc_url($order->get_permalink().'?item_id='.$order->get_id().'&order_id='.$orders['order_id'].'&user_id='.get_current_user_id() );
-       // $refLink = $this->short_url($refLink);
-        $short_cart = substr(md5(sha1($refTmpLink)),-10);
-        $refLink = esc_url($order->get_permalink().'?ref='.$short_cart);
+
         global $wpdb;
-        $sql = sprintf("select * from wp_woocommerce_order_refer where short_code='%s' and user_id = %s",$short_cart,get_current_user_id());
-        $row = $wpdb->get_results( $sql , ARRAY_A );
-        if(!$row[0]){
-            $data = array( 'short_code' => $short_cart, 'item_id' => $order->get_id(), 'user_id' => get_current_user_id(),'order_id'=>$orders['order_id'] );
-            $wpdb->insert('wp_woocommerce_order_refer', $data );
+        $ref_short_code = WC()->session->get('ref_for_a_friends_order');
+        if(!empty($ref_short_code)){ //如果是受邀请进入的
+            $sql = sprintf("select * from wp_woocommerce_order_refer where short_code='%s'",$ref_short_code);
+            $row = $wpdb->get_results( $sql , ARRAY_A );
+            if($row[0]){
+
+            }
         }else{
+
+            //生成短链接并存到数据库
+            $refTmpLink = esc_url($order->get_permalink().'?item_id='.$order->get_id().'&order_id='.$orders['order_id'].'&user_id='.get_current_user_id() );
+            $short_code = substr(md5(sha1($refTmpLink)),-10);
+            $refLink = esc_url($order->get_permalink().'?ref='.$short_code);
+            $sql = sprintf("select * from wp_woocommerce_order_refer where short_code='%s'",$short_code);
+            $row = $wpdb->get_results( $sql , ARRAY_A );
+            if(!$row[0]){
+                $data = array( 'short_code' => $short_code,'invite_short_code' => $short_code, 'item_id' => $order->get_id(), 'user_id' => get_current_user_id(),'order_id'=>$orders['order_id'] );
+                $wpdb->insert('wp_woocommerce_order_refer', $data );
+            }
+            ?>
+            <div id="raf-message" class="woocommerce-message"><?php _e( 'invite your friend to get this deal together !','gens-raf'); ?> <a href="<?php echo $refLink; ?>" ><?php echo $refLink; ?></a></div>
+
+        <?php
         }
-
-        ?>
-        <div id="raf-message" class="woocommerce-message"><?php _e( 'invite your friend to get this deal together !','gens-raf'); ?> <a href="<?php echo $refLink; ?>" ><?php echo $refLink; ?></a></div>
-
-    <?php
     }
 
 	/**

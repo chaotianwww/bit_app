@@ -21,7 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 
 $attribute_keys = array_keys( $attributes );
-echo 'xxxxrefffff--'. WC()->session->get('ref_for_a_friends_order');
 
 do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
