@@ -19,7 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 if(isset($_GET['ref'] ) && !empty($_GET['ref'] )){
-   $_COOKIE['ref_for_a_friends_order'] = $_GET['ref'] ;
+    setcookie("ref_for_a_friends_order", $_GET['ref'], time()+60*60*24*30);
+
 }
 global $product;
 
