@@ -263,11 +263,11 @@ class Gens_RAF_Public {
 	 * @since    1.0.0
 	 */
 	public function account_page_show_link() {
-
+;
 		$referral_id = $this->get_referral_id( get_current_user_id() );
 		$refLink = esc_url(add_query_arg( 'raf', $referral_id, get_home_url() )); 
 	?>
-		<div id="raf-message" class="woocommerce-message"><?php _e( 'Your Referral URL:','gens-raf'); ?> <a href="<?php echo $refLink; ?>" ><?php echo $refLink; ?></a></div>
+		<!--<div id="raf-message" class="woocommerce-message"><?php /*_e( 'Your Referral URL:','gens-raf'); */?> <a href="<?php /*echo $refLink; */?>" ><?php /*echo $refLink; */?></a></div>-->
 	<?php
 	}
 
