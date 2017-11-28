@@ -291,6 +291,7 @@ class Gens_RAF_Public {
         }
 
         ?>
+        121212121<?php echo '0-----' ?><?php print_r($row) ?>
         <div id="raf-message" class="woocommerce-message"><?php _e( 'invite your friend to get this deal together !','gens-raf'); ?> <a href="<?php echo $refLink; ?>" ><?php echo $refLink; ?></a></div>
 
     <?php
