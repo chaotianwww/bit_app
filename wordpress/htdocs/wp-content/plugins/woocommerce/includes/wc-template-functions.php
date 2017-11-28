@@ -544,6 +544,7 @@ if ( ! function_exists( 'woocommerce_demo_store' ) ) {
 	}
 }
 
+echo 'xxxxxxxxxxxxxxxxxxxxxx';exit;
 /**
  * Loop
  */
@@ -1054,7 +1055,6 @@ if ( ! function_exists( 'woocommerce_variable_add_to_cart' ) ) {
 	 * @subpackage	Product
 	 */
 	function woocommerce_variable_add_to_cart() {
-        echo 1;exit;
 		global $product;
 
 		// Enqueue variation scripts.
