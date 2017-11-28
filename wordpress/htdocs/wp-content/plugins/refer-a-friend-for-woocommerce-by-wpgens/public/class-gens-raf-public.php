@@ -272,8 +272,6 @@ class Gens_RAF_Public {
 	}
 
     public function account_page_show_order_link($orders) {
-
-
         $order = [];
         foreach($orders['item'] as $tmp_item_id => $val){
             $order =  $val->get_product();
@@ -292,7 +290,7 @@ class Gens_RAF_Public {
         }
 
         ?>
-        <div id="raf-message" class="woocommerce-message"><?php _e( 'invite your friend to get this deal together !','gens-raf'); ?> <a href="<?php echo $refLink; ?>" ><?php echo $refLink; ?></a></div>
+        <div id="raf-message" class="woocommerce-message"><?php _e( 'invite your friend to get this deal together !!','gens-raf'); ?> <a href="<?php echo $refLink; ?>" ><?php echo $refLink; ?></a></div>
 
     <?php
     }
