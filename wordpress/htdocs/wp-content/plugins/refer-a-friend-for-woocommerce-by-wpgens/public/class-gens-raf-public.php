@@ -286,12 +286,9 @@ class Gens_RAF_Public {
         if(!$row){
             $wpdb->insert('wp_woocommerce_order_refer', array( 'short_code' => $short_cart, 'item_id' => $order->get_id(), 'user_id' => get_current_user_id(),'order_id'=> $order->get_id() ) );
         }else{
-            echo '--------------------------';
-            var_dump($row);
         }
 
         ?>
-        121212121<?php echo '0-----' ?><?php print_r($row) ?>
         <div id="raf-message" class="woocommerce-message"><?php _e( 'invite your friend to get this deal together !','gens-raf'); ?> <a href="<?php echo $refLink; ?>" ><?php echo $refLink; ?></a></div>
 
     <?php
