@@ -281,6 +281,7 @@ class Gens_RAF_Public {
        // $referral_id = $this->get_referral_id( get_current_user_id() );
         $refLink = esc_url($order->get_permalink().'?item_id='.$order->get_id().'&order_id='.$orders['order_id'].'&user_id='.get_current_user_id() );
         $refLink = $this->short_url($refLink);
+        $refLink = esc_url($order->get_permalink().'?ref='.$refLink[0]);
         ?>
         <div id="raf-message" class="woocommerce-message"><?php _e( 'invite your friend to get this deal together !','gens-raf'); ?> <a href="<?php echo $refLink; ?>" ><?php echo $refLink; ?></a></div>
 
@@ -288,13 +289,16 @@ class Gens_RAF_Public {
     }
 
    public function short_url($input) {
+       $key = 'cyan';
         $base32 = array (
-            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-            'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
-            'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
-            'y', 'z', '0', '1', '2', '3', '4', '5'
+            "a", "b", "c", "d", "e", "f", "g", "h",
+            "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
+            "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5",
+            "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H",
+            "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
+            "U", "V", "W", "X", "Y", "Z"
         );
-        $hex = md5($input);
+        $hex = md5($key.'_'.$input);
         $hexLen = strlen($hex);
         $subHexLen = $hexLen / 8;
         $output = array();
