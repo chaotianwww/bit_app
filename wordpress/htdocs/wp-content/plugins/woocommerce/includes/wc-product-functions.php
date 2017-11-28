@@ -65,7 +65,6 @@ function wc_get_product( $the_product = false, $deprecated = array() ) {
 	if ( ! empty( $deprecated ) ) {
 		wc_deprecated_argument( 'args', '3.0', 'Passing args to wc_get_product is deprecated. If you need to force a type, construct the product class directly.' );
 	}
-    print_r(WC()->product_factory->get_product( $the_product, $deprecated ));exit;
 	return WC()->product_factory->get_product( $the_product, $deprecated );
 }
 
