@@ -279,21 +279,13 @@ class Gens_RAF_Public {
             $order =  $val->get_product();
         }
        // $referral_id = $this->get_referral_id( get_current_user_id() );
-        $refLink = esc_url($order->get_permalink().'?item_id='.$order->get_id().'&order_id='.$orders['order_id'].'&user_id='.get_current_user_id() );
+        $refTmpLink = esc_url($order->get_permalink().'?item_id='.$order->get_id().'&order_id='.$orders['order_id'].'&user_id='.get_current_user_id() );
        // $refLink = $this->short_url($refLink);
-        //$refLink = esc_url($order->get_permalink().'?ref='.$refLink[0]);
+        $refLink = esc_url($order->get_permalink().'?ref='.substr(md5(sha1($refTmpLink)),-6));
         ?>
         <div id="raf-message" class="woocommerce-message"><?php _e( 'invite your friend to get this deal together !','gens-raf'); ?> <a href="<?php echo $refLink; ?>" ><?php echo $refLink; ?></a></div>
 
     <?php
-    }
-
-   public function short_url($input) {
-       $key = 'cyan';
-       $codes = "abcdefghjkmnpqrstuvwxyz23456789ABCDEFGHJKLMNPQRSTUVWXYZ";
-        $hex = md5($key.'_'.$input);
-
-        return $input;
     }
 
 	/**
