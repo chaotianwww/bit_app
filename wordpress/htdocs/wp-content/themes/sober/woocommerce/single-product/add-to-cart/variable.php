@@ -19,13 +19,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 if(isset($_GET['ref'] ) && !empty($_GET['ref'] )){
-    echo 'abcdfefg';
-   $_SESSION['ref_for_a_friends_order'] = $_GET['ref'] ;
+   $_COOKIE['ref_for_a_friends_order'] = $_GET['ref'] ;
 }
 global $product;
 
 $attribute_keys = array_keys( $attributes );
-echo 'reffffffffffffff----xxx-'. $_SESSION['ref_for_a_friends_order'];
+echo 'reffffffffffffff----xxx-'. $_COOKIE['ref_for_a_friends_order'];
 
 do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
