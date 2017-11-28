@@ -294,6 +294,7 @@ class Gens_RAF_Public {
                     $wpdb->insert('wp_woocommerce_order_refer', $data );
                 }
                 $own_group = false;
+                $short_code = $ref_short_code;
             }
         }
 
@@ -301,17 +302,17 @@ class Gens_RAF_Public {
             //生成短链接并存到数据库
             $refTmpLink = esc_url($order->get_permalink().'?item_id='.$order->get_id().'&order_id='.$orders['order_id'].'&user_id='.get_current_user_id() );
             $short_code = substr(md5(sha1($refTmpLink)),-10);
-            $refLink = esc_url($order->get_permalink().'?ref='.$short_code);
             $row = $wpdb->get_results( sprintf("select * from wp_woocommerce_order_refer where short_code='%s'",$short_code) , ARRAY_A );
             if(!$row[0]){
                 $data = array( 'short_code' => $short_code,'invite_short_code' => $short_code, 'item_id' => $order->get_id(), 'user_id' => get_current_user_id(),'order_id'=>$orders['order_id'] );
                 $wpdb->insert('wp_woocommerce_order_refer', $data );
             }
-            ?>
-            <div id="raf-message" class="woocommerce-message"><?php _e( 'invite your friend to get this deal together !','gens-raf'); ?> <a href="<?php echo $refLink; ?>" ><?php echo $refLink; ?></a></div>
-
-        <?php
         }
+        $refLink = esc_url($order->get_permalink().'?ref='.$short_code);
+        ?>
+        <div id="raf-message" class="woocommerce-message"><?php _e( 'invite your friend to get this deal together !','gens-raf'); ?> <a href="<?php echo $refLink; ?>" ><?php echo $refLink; ?></a></div>
+
+    <?php
     }
 
 	/**
