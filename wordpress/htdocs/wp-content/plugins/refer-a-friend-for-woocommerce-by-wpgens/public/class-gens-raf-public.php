@@ -287,13 +287,13 @@ class Gens_RAF_Public {
         if(!$row[0]){
             echo '2222222222222222';
             $data = array( 'short_code' => $short_cart, 'item_id' => $order->get_id(), 'user_id' => get_current_user_id(),'order_id'=> $order->get_id() );
-            $wpdb->insert('wp_woocommerce_order_refer', $data );
+            //$wpdb->insert('wp_woocommerce_order_refer', $data );
         }else{
             echo '----12121212';
         }
 
         ?>
-        <div id="raf-message" class="woocommerce-message"><?php _e( 'invite your friend to get this deal together !','gens-raf'); ?> <a href="<?php echo $refLink; ?>" ><?php echo $refLink; ?></a></div>
+        <div id="raf-message" class="woocommerce-message"><?php _e( 'invite your friend to get this deal together !!','gens-raf'); ?> <a href="<?php echo $refLink; ?>" ><?php echo $refLink; ?></a></div>
 
     <?php
     }
