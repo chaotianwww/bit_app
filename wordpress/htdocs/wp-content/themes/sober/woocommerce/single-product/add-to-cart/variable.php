@@ -19,7 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 if(isset($_GET['ref'] ) && !empty($_GET['ref'] )){
-    setcookie("ref_for_a_friends_order", $_GET['ref'], time()+60*60*24);
+    $secure = ( 'https' === parse_url( wp_login_url(), PHP_URL_SCHEME ) );
+    setcookie("ref_for_a_friends_order", $_GET['ref'], 0, COOKIEPATH, COOKIE_DOMAIN, $secure);
 
 }
 global $product;
