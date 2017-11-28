@@ -283,14 +283,11 @@ class Gens_RAF_Public {
         $refLink = esc_url($order->get_permalink().'?ref='.$short_cart);
         global $wpdb;
         $sql = sprintf("select * from wp_woocommerce_order_refer where short_code='%s' and user_id = %s",$short_cart,get_current_user_id());
-        /*echo $sql;
-        $row = $wpdb->get_results( $sql , ARRAY_A  );*/
-        //if(!$row){
-        $data = array( 'short_code' => $short_cart, 'item_id' => $order->get_id(), 'user_id' => get_current_user_id(),'order_id'=> $order->get_id() );
-        print_r($data);
-         $wpdb->insert('wp_woocommerce_order_refer', $data );
-        /*}else{
-        }*/
+        $row = $wpdb->get_results( $sql , ARRAY_A );
+        if(!$row[0]){
+            $data = array( 'short_code' => $short_cart, 'item_id' => $order->get_id(), 'user_id' => get_current_user_id(),'order_id'=> $order->get_id() );
+            $wpdb->insert('wp_woocommerce_order_refer', $data );
+        }
 
         ?>
         <div id="raf-message" class="woocommerce-message"><?php _e( 'invite your friend to get this deal together !','gens-raf'); ?> <a href="<?php echo $refLink; ?>" ><?php echo $refLink; ?></a></div>
