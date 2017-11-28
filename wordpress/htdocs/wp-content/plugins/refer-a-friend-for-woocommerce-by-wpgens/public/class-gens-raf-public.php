@@ -279,33 +279,42 @@ class Gens_RAF_Public {
 
         global $wpdb;
         $ref_short_code = WC()->session->get('ref_for_a_friends_order');
-        $own_group = true; //判断该订单是否为拼团
+        $own_group = true; //判断该人是否为团长
         if(!empty($ref_short_code)){ //如果是受邀请进入的
             $ref_result = $wpdb->get_results( sprintf("select * from wp_woocommerce_order_refer where short_code='%s'",$ref_short_code) , ARRAY_A );
             /**
              * 如果存在该拼团记录，并且是该商品，且不是和团长一起买的，就认定为拼团成功
-             * （有个坑，除了团长以外的人可以买两次也算拼团成功）
              */
             if($ref_result[0] && $order->get_id() == $ref_result[0]['item_id'] && get_current_user_id() != $ref_result[0]['user_id']){
 
-                $own_result = $wpdb->get_results( sprintf("select * from wp_woocommerce_order_refer where invite_short_code='%s' and user_id = %s",$ref_short_code,get_current_user_id()) , ARRAY_A );
-                if(!$own_result[0]){ //记录存在，就不存了
-                    $data = array( 'invite_short_code' => $ref_short_code, 'item_id' => $order->get_id(), 'user_id' => get_current_user_id(),'order_id'=>$orders['order_id'] );
-                    $wpdb->insert('wp_woocommerce_order_refer', $data );
-                }
                 $own_group = false;
                 $short_code = $ref_short_code;
+
+                $own_result = $wpdb->get_results( sprintf("select * from wp_woocommerce_order_refer where invite_short_code='%s' and user_id = %s",$ref_short_code,get_current_user_id()) , ARRAY_A );
+                if(!$own_result[0]){ //记录不存在，就代表是拼团
+                    $data = array( 'invite_short_code' => $ref_short_code, 'item_id' => $order->get_id(), 'user_id' => get_current_user_id(),'order_id'=>$orders['order_id'] );
+                    $wpdb->insert('wp_woocommerce_order_refer', $data );
+                }else if($own_result[0]['order_id'] != $orders['order_id']){ //如果不这个人买过该商品但订单ID在库里没有，则认为该人是新的团长
+                    $own_group = true;
+                }else{}//代表这个人点订单详情查看
             }
         }
 
         if($own_group){
-            //生成短链接并存到数据库
-            $refTmpLink = esc_url($order->get_permalink().'?item_id='.$order->get_id().'&order_id='.$orders['order_id'].'&user_id='.get_current_user_id() );
-            $short_code = substr(md5(sha1($refTmpLink)),-10);
-            $row = $wpdb->get_results( sprintf("select * from wp_woocommerce_order_refer where short_code='%s'",$short_code) , ARRAY_A );
-            if(!$row[0]){
-                $data = array( 'short_code' => $short_code,'invite_short_code' => $short_code, 'item_id' => $order->get_id(), 'user_id' => get_current_user_id(),'order_id'=>$orders['order_id'] );
-                $wpdb->insert('wp_woocommerce_order_refer', $data );
+            //(防止session过期重复创建)如果该订单已经创建过了，就跳过
+            $own_result = $wpdb->get_results( sprintf("select * from wp_woocommerce_order_refer where order_id='%s' and user_id = %s",$orders['order_id'],get_current_user_id()) , ARRAY_A );
+
+            if($own_result[0]) {
+                $short_code = $own_result[0]['invite_short_code'];
+            }else{
+                //生成短链接并存到数据库
+                $refTmpLink = esc_url($order->get_permalink().'?item_id='.$order->get_id().'&order_id='.$orders['order_id'].'&user_id='.get_current_user_id() );
+                $short_code = substr(md5(sha1($refTmpLink)),-10);
+                $result = $wpdb->get_results( sprintf("select * from wp_woocommerce_order_refer where short_code='%s'",$short_code) , ARRAY_A );
+                if(!$result[0]){
+                    $data = array( 'short_code' => $short_code,'invite_short_code' => $short_code, 'item_id' => $order->get_id(), 'user_id' => get_current_user_id(),'order_id'=>$orders['order_id'] );
+                    $wpdb->insert('wp_woocommerce_order_refer', $data );
+                }
             }
         }
         $refLink = esc_url($order->get_permalink().'?ref='.$short_code);
