@@ -283,11 +283,11 @@ class Gens_RAF_Public {
         $refLink = esc_url($order->get_permalink().'?ref='.$short_cart);
         global $wpdb;
         $row = $wpdb->get_row( sprintf("select * from wp_woocommerce_order_refer where short_code='%s' and user_id = %s",$short_cart,get_current_user_id()) , ARRAY_A , 1 );
-        print_r($row);exit;
         if(!$row){
             $wpdb->insert('wp_woocommerce_order_refer', array( 'short_code' => $short_cart, 'item_id' => $order->get_id(), 'user_id' => get_current_user_id(),'order_id'=> $order->get_id() ) );
         }else{
-            //echo $row->short_code,'-----------sdfsdfsdfdfsdf';
+            echo '--------------------------';
+            print_r($row);
         }
 
         ?>
