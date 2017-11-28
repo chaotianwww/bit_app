@@ -277,7 +277,7 @@ class Gens_RAF_Public {
         $order = [];
         foreach($orders as $key => $val){
             print_r($val);
-            $order =  $val['data'];
+            $order =  $val->get_product();
         }
         print_r($order);
         $referral_id = $this->get_referral_id( get_current_user_id() );
