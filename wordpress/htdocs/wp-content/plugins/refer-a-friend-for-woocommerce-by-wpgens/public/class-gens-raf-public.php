@@ -285,11 +285,9 @@ class Gens_RAF_Public {
         $sql = sprintf("select * from wp_woocommerce_order_refer where short_code='%s' and user_id = %s",$short_cart,get_current_user_id());
         $row = $wpdb->get_results( $sql , ARRAY_A );
         if(!$row[0]){
-            echo '2222222222222222';
             $data = array( 'short_code' => $short_cart, 'item_id' => $order->get_id(), 'user_id' => get_current_user_id(),'order_id'=> $order->get_id() );
-            //$wpdb->insert('wp_woocommerce_order_refer', $data );
+            $wpdb->insert('wp_woocommerce_order_refer', $data );
         }else{
-            echo '----12121212';
         }
 
         ?>
