@@ -41,7 +41,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 *
 	 * @since 2.6.0
 	 */
-	do_action( 'woocommerce_account_dashboard' );
+	//do_action( 'woocommerce_account_dashboard' );
 
 	/**
 	 * Deprecated woocommerce_before_my_account action.
@@ -57,12 +57,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 */
 	do_action( 'woocommerce_after_my_account' );
 ?>
-<div class="woocommerce-share">
+<!--<div class="woocommerce-share">
     <button id="share_face_book" class="share-link"><i class="icon-facebook"></i>share to facebook</button>
     <button id="share_twitter" class="share-link"><i class="icon-twitter"></i>share to twitter</button>
     <button id="share_google" class="share-link"><i class="icon-google"></i>share to google+</button>
 </div>
-
+-->
 <?php
 do_action( 'woocommerce_before_edit_account_form' ); ?>
 
