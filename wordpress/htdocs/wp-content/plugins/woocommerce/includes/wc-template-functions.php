@@ -59,6 +59,7 @@ function wc_template_redirect() {
 
 		// Redirect to the product page if we have a single product.
 		$product = wc_get_product( $wp_query->post );
+        print_r($product);exit;
 
 		if ( $product && $product->is_visible() ) {
 			wp_safe_redirect( get_permalink( $product->get_id() ), 302 );
