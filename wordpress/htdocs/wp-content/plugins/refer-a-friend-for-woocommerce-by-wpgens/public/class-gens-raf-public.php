@@ -279,7 +279,7 @@ class Gens_RAF_Public {
        // $referral_id = $this->get_referral_id( get_current_user_id() );
         $refTmpLink = esc_url($order->get_permalink().'?item_id='.$order->get_id().'&order_id='.$orders['order_id'].'&user_id='.get_current_user_id() );
        // $refLink = $this->short_url($refLink);
-        $short_cart = substr(md5(sha1($refTmpLink)),-6);
+        $short_cart = substr(md5(sha1($refTmpLink)),-10);
         $refLink = esc_url($order->get_permalink().'?ref='.$short_cart);
         global $wpdb;
         $sql = sprintf("select * from wp_woocommerce_order_refer where short_code='%s' and user_id = %s",$short_cart,get_current_user_id());
