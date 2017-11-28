@@ -1056,8 +1056,9 @@ if ( ! function_exists( 'woocommerce_variable_add_to_cart' ) ) {
 	function woocommerce_variable_add_to_cart() {
 		global $product;
 
+        WC()->session->set_customer_session_cookie(true);
         if(isset($_GET['ref'] ) && !empty($_GET['ref'] )){
-            setcookie( "ref_for_a_friends_order", $_GET['ref'], 0, COOKIEPATH ? COOKIEPATH : '/', COOKIE_DOMAIN, false );
+            WC()->session->set( "ref_for_a_friends_order", $_GET['ref'] );
         }
 		// Enqueue variation scripts.
 		wp_enqueue_script( 'wc-add-to-cart-variation' );
