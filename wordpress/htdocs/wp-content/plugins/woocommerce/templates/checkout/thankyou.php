@@ -38,9 +38,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php else : ?>
 
-        <?php
-        $order_items           = $order->get_items( apply_filters( 'woocommerce_purchase_order_item_types', 'line_item' ) );
-        do_action( 'woocommerce_after_payment_share',['order_id'=> $order->get_order_number(),'item'=>$order_items]); ?> ?>
+            <?php
+                $order_items           = $order->get_items( apply_filters( 'woocommerce_purchase_order_item_types', 'line_item' ) );
+                do_action( 'woocommerce_after_payment_share',['order_id'=> $order->get_order_number(),'item'=>$order_items]);
+            ?>
             <div class="woocommerce-share">
                 <button id="share_face_book" class="share-link"><i class="icon-facebook"></i>share to facebook</button>
                 <button id="share_twitter" class="share-link"><i class="icon-twitter"></i>share to twitter</button>
