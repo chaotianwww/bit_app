@@ -544,7 +544,6 @@ if ( ! function_exists( 'woocommerce_demo_store' ) ) {
 	}
 }
 
-echo 'xxxxxxxxxxxxxxxxxxxxxx';exit;
 /**
  * Loop
  */
