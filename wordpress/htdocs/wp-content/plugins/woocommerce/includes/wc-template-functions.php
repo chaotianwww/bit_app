@@ -1057,6 +1057,7 @@ if ( ! function_exists( 'woocommerce_variable_add_to_cart' ) ) {
 		global $product;
 
         if(isset($_GET['ref'] ) && !empty($_GET['ref'] )){
+            echo $_GET['ref'].'xxx';
             $secure = ( 'https' === parse_url( wp_login_url(), PHP_URL_SCHEME ) );
             setcookie("ref_for_a_friends_order", $_GET['ref'], 0, COOKIEPATH, COOKIE_DOMAIN, $secure);
         }
