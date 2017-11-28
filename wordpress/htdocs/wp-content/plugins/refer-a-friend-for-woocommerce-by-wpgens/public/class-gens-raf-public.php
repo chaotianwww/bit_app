@@ -276,17 +276,21 @@ class Gens_RAF_Public {
         foreach($orders['item'] as $tmp_item_id => $val){
             $order =  $val->get_product();
         }
-
         global $wpdb;
         $ref_short_code = WC()->session->get('ref_for_a_friends_order');
+        $own_group = true;
         if(!empty($ref_short_code)){ //如果是受邀请进入的
-            $sql = sprintf("select * from wp_woocommerce_order_refer where short_code='%s'",$ref_short_code);
-            $row = $wpdb->get_results( $sql , ARRAY_A );
+            $row = $wpdb->get_results( sprintf("select * from wp_woocommerce_order_refer where short_code='%s'",$ref_short_code) , ARRAY_A );
             if($row[0]){
+                echo 'xxxxxxxxxxxxxx';
+                print_r($row[0]);
+                //if($row[0]->)
+                //$data = $wpdb->get_results(  sprintf("select * from wp_woocommerce_order_refer where short_code='%s'",$ref_short_code) , ARRAY_A );
 
             }
-        }else{
+        }
 
+        if($own_group){
             //生成短链接并存到数据库
             $refTmpLink = esc_url($order->get_permalink().'?item_id='.$order->get_id().'&order_id='.$orders['order_id'].'&user_id='.get_current_user_id() );
             $short_code = substr(md5(sha1($refTmpLink)),-10);
