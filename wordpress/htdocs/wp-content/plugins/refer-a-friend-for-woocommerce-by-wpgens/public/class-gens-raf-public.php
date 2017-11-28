@@ -279,6 +279,7 @@ class Gens_RAF_Public {
 
         global $wpdb;
         $ref_short_code = WC()->session->get('ref_for_a_friends_order');
+        echo $ref_short_code;exit;
         $own_group = true; //判断该订单是否为拼团
         if(!empty($ref_short_code)){ //如果是受邀请进入的
             $ref_result = $wpdb->get_results( sprintf("select * from wp_woocommerce_order_refer where short_code='%s'",$ref_short_code) , ARRAY_A );
