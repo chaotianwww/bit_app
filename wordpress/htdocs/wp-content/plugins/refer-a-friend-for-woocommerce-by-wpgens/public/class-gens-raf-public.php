@@ -287,7 +287,7 @@ class Gens_RAF_Public {
             $wpdb->insert('wp_woocommerce_order_refer', array( 'short_code' => $short_cart, 'item_id' => $order->get_id(), 'user_id' => get_current_user_id(),'order_id'=> $order->get_id() ) );
         }else{
             echo '--------------------------';
-            print_r($row);
+            var_dump($row);
         }
 
         ?>
