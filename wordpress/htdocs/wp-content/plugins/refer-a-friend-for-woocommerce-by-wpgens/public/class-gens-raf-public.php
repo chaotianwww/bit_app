@@ -276,17 +276,20 @@ class Gens_RAF_Public {
         foreach($orders['item'] as $tmp_item_id => $val){
             $order =  $val->get_product();
         }
+
         global $wpdb;
         $ref_short_code = WC()->session->get('ref_for_a_friends_order');
-        $own_group = true;
+        $own_group = true; //判断该订单是否为拼团
         if(!empty($ref_short_code)){ //如果是受邀请进入的
             $row = $wpdb->get_results( sprintf("select * from wp_woocommerce_order_refer where short_code='%s'",$ref_short_code) , ARRAY_A );
-            if($row[0]){
-                echo 'xxxxxxxxxxxxxx';
-                print_r($row[0]);
-                //if($row[0]->)
-                //$data = $wpdb->get_results(  sprintf("select * from wp_woocommerce_order_refer where short_code='%s'",$ref_short_code) , ARRAY_A );
-
+            /**
+             * 如果存在该拼团记录，并且是该商品，且不是和团长一起买的，就认定为拼团成功
+             * （有个坑，除了团长以外的人可以买两次也算拼团成功）
+             */
+            if($row[0] && $order->get_id() == $row[0]['item_id'] && get_current_user_id() != $row[0]['user_id']){
+                $data = array( 'invite_short_code' => $ref_short_code, 'item_id' => $order->get_id(), 'user_id' => get_current_user_id(),'order_id'=>$orders['order_id'] );
+                $wpdb->insert('wp_woocommerce_order_refer', $data );
+                $own_group = false;
             }
         }
 
@@ -295,8 +298,7 @@ class Gens_RAF_Public {
             $refTmpLink = esc_url($order->get_permalink().'?item_id='.$order->get_id().'&order_id='.$orders['order_id'].'&user_id='.get_current_user_id() );
             $short_code = substr(md5(sha1($refTmpLink)),-10);
             $refLink = esc_url($order->get_permalink().'?ref='.$short_code);
-            $sql = sprintf("select * from wp_woocommerce_order_refer where short_code='%s'",$short_code);
-            $row = $wpdb->get_results( $sql , ARRAY_A );
+            $row = $wpdb->get_results( sprintf("select * from wp_woocommerce_order_refer where short_code='%s'",$short_code) , ARRAY_A );
             if(!$row[0]){
                 $data = array( 'short_code' => $short_code,'invite_short_code' => $short_code, 'item_id' => $order->get_id(), 'user_id' => get_current_user_id(),'order_id'=>$orders['order_id'] );
                 $wpdb->insert('wp_woocommerce_order_refer', $data );
