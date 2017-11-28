@@ -281,14 +281,18 @@ class Gens_RAF_Public {
         $ref_short_code = WC()->session->get('ref_for_a_friends_order');
         $own_group = true; //判断该订单是否为拼团
         if(!empty($ref_short_code)){ //如果是受邀请进入的
-            $row = $wpdb->get_results( sprintf("select * from wp_woocommerce_order_refer where short_code='%s'",$ref_short_code) , ARRAY_A );
+            $ref_result = $wpdb->get_results( sprintf("select * from wp_woocommerce_order_refer where short_code='%s'",$ref_short_code) , ARRAY_A );
             /**
              * 如果存在该拼团记录，并且是该商品，且不是和团长一起买的，就认定为拼团成功
              * （有个坑，除了团长以外的人可以买两次也算拼团成功）
              */
-            if($row[0] && $order->get_id() == $row[0]['item_id'] && get_current_user_id() != $row[0]['user_id']){
-                $data = array( 'invite_short_code' => $ref_short_code, 'item_id' => $order->get_id(), 'user_id' => get_current_user_id(),'order_id'=>$orders['order_id'] );
-                $wpdb->insert('wp_woocommerce_order_refer', $data );
+            if($ref_result[0] && $order->get_id() == $ref_result[0]['item_id'] && get_current_user_id() != $ref_result[0]['user_id']){
+
+                $own_result = $wpdb->get_results( sprintf("select * from wp_woocommerce_order_refer where invite_short_code='%s' and user_id = %s",$ref_short_code,get_current_user_id()) , ARRAY_A );
+                if(!$own_result[0]){ //记录存在，就不存了
+                    $data = array( 'invite_short_code' => $ref_short_code, 'item_id' => $order->get_id(), 'user_id' => get_current_user_id(),'order_id'=>$orders['order_id'] );
+                    $wpdb->insert('wp_woocommerce_order_refer', $data );
+                }
                 $own_group = false;
             }
         }
