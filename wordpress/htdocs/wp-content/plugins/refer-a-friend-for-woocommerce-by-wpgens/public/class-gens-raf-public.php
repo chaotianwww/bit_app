@@ -287,6 +287,8 @@ class Gens_RAF_Public {
         if(!$row[0]){
             $data = array( 'short_code' => $short_cart, 'item_id' => $order->get_id(), 'user_id' => get_current_user_id(),'order_id'=> $order->get_id() );
             $wpdb->insert('wp_woocommerce_order_refer', $data );
+        }else{
+            echo '----12121212';
         }
 
         ?>
