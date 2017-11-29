@@ -63,7 +63,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php endif; ?>
 <script>
 
-    console.log("testtesttest");
+    console.log("xxxxxxxxxxxxxxxxxxxxxxxx");
     window.fbAsyncInit = function() {
         FB.init({
             appId            : '1955847301339546',
@@ -94,8 +94,10 @@ if ( ! defined( 'ABSPATH' ) ) {
             console.log("share_to_whats_app");
             window.open("https://web.whatsapp.com/send?text="+jQuery("#raf-message a").html());
         });
-
-
+        jQuery("#share_to_fb_msg").click(function(){
+            console.log("share_to_fb_msg");
+            window.open("fb-messenger://share?link="+encodeURIComponent(jQuery("#raf-message a").html())+ '&app_id=' + encodeURIComponent("1955847301339546"));
+        });
 
     });
 
