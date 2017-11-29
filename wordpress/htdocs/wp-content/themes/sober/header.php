@@ -24,13 +24,13 @@
 
 <?php do_action( 'sober_before_site' ) ?>
 <script>
-    window.fbAsyncInit = function() {
+    /*window.fbAsyncInit = function() {
         FB.init({
             appId      : '1955847301339546',
             xfbml      : true,
             version    : 'v2.6'
         });
-    };
+    };*/
 
     /*(function(d, s, id){
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -40,7 +40,7 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));*/
 </script>
-<script src="<?php echo get_template_directory_uri();?>/fb_sdk.js" ></script>
+<!--<script src="<?php /*echo get_template_directory_uri();*/?>/fb_sdk.js" ></script>-->
 
 
 <div id="page" class="site">
