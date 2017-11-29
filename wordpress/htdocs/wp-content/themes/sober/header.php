@@ -23,7 +23,30 @@
 <body <?php body_class(); ?>>
 
 <?php do_action( 'sober_before_site' ) ?>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '1955847301339546',
+            xfbml      : true,
+            version    : 'v2.6'
+        });
+    };
 
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-messengermessageus"
+     messenger_app_id="1955847301339546"
+     page_id="1736079153368048"
+     color="blue"
+     size="large">
+</div>
 <div id="page" class="site">
 	<?php do_action( 'sober_before_header' ); ?>
 
