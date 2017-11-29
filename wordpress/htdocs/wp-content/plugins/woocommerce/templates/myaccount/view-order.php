@@ -100,9 +100,5 @@ if ( ! defined( 'ABSPATH' ) ) {
         });
 
     });
-
-
-
-
 </script>
 <?php do_action( 'woocommerce_view_order', $order_id ); ?>
