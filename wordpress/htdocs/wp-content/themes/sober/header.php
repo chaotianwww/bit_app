@@ -41,12 +41,7 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-messengermessageus"
-     messenger_app_id="1955847301339546"
-     page_id="1736079153368048"
-     color="blue"
-     size="large">
-</div>
+
 <div id="page" class="site">
 	<?php do_action( 'sober_before_header' ); ?>
 
