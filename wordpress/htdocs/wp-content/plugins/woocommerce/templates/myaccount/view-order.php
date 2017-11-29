@@ -105,10 +105,19 @@ if ( ! defined( 'ABSPATH' ) ) {
                 }, function(response){});
         });
     };
+
+
     jQuery(document).ready(function(){
         jQuery(".woocommerce-message").addClass("woocommerce-message-bgcolor");
 
+        jQuery("#share_to_whats_app").click(function(){
+            console.log("share_to_whats_app");
+            window.open("https://web.whatsapp.com/send?text="+jQuery("#raf-message a").html());
+        });
+
     });
+
+
 
 
 </script>
