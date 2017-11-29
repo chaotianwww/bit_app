@@ -1083,13 +1083,23 @@ if ( ! function_exists( 'sober_mobile_header_icon' ) ) :
 					sober_shopping_cart_icon( false ),
 					sober_get_option( 'mobile_cart_badge' ) ? '<span class="count cart-counter">' . intval( WC()->cart->get_cart_contents_count() ) . '</span>' : ''
 				);*/
-                printf('
-                        <div class="menu-item-mobile-cart hidden-lg fb-messengermessageus"
-                         messenger_app_id="1955847301339546"
-                         page_id="1736079153368048"
-                         color="blue"
-                         size="large">
-                    </div>');
+                echo('
+                                <a class="menu-item-mobile-cart hidden-lg" href="https://m.me/1736079153368048" target="_blank" style="
+                                display: block;
+                                width: 27px;
+                                height: 27px;
+                                background-color: #0084ff;
+                                text-align:center;
+                                border-radius: 27px;
+                            ">
+                        <img src="https://vanshirt.com/wp-content/plugins/ninja-facebook-messenger/frontend/images/facebook-messenger.svg" alt="" style="
+                                height: auto;
+                                width: 80%;
+                                height: 80%;
+                                margin-top: 10%;
+                                vertical-align: top;
+                                ">
+                        </a>');
 
 				break;
 
