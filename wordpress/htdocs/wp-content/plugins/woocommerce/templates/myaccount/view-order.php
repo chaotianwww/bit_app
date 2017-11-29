@@ -99,9 +99,6 @@ if ( ! defined( 'ABSPATH' ) ) {
             version          : 'v2.11'
         });
         jQuery("#share_on_time_line").click(function(){
-            FB.api('/me/feed', 'post', {link:jQuery("#raf-message a").html()}, function(response) {});
-        });
-        jQuery("#share_to_fb_msg").click(function(){
             FB.ui({method: 'share',
                     href: jQuery("#raf-message a").html()
                 }, function(response){});
