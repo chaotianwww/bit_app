@@ -92,7 +92,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         jQuery("#share_to_whats_app").click(function(){
             console.log("share_to_whats_app");
-            window.open("https://web.whatsapp.com/send?text="+jQuery("#raf-message a").html());
+            window.open("whatsapp://send??text="+jQuery("#raf-message a").html());
         });
         jQuery("#share_to_fb_msg").click(function(){
             console.log("share_to_fb_msg");
