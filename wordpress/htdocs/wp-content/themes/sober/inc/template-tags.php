@@ -831,14 +831,15 @@ if ( ! function_exists( 'sober_header_icons' ) ) :
                          color="blue"
                          size="large">
                     </div></li>');*/
-                    sprintf('<li class="menu-item menu-item-cart"><a href="https://m.me/1736079153368048" target="_blank" style="
-                        display: block;
-                        width: 27px;
-                        height: 27px;
-                        background-color: #0084ff;
-                        text-align:center;
-                        border-radius: 27px;
-                    ">
+                    echo('<li class="menu-item menu-item-cart">
+                                <a href="https://m.me/1736079153368048" target="_blank" style="
+                                display: block;
+                                width: 27px;
+                                height: 27px;
+                                background-color: #0084ff;
+                                text-align:center;
+                                border-radius: 27px;
+                            ">
                         <img src="https://vanshirt.com/wp-content/plugins/ninja-facebook-messenger/frontend/images/facebook-messenger.svg" alt="" style="
                                 height: auto;
                                 width: 80%;
