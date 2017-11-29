@@ -319,7 +319,11 @@ class Gens_RAF_Public {
         }
         $refLink = esc_url($order->get_permalink().'?ref='.$short_code);
         ?>
-        <div id="raf-message" class="woocommerce-message"><?php _e( 'invite your friend to get this deal together !','gens-raf'); ?> <a href="javascript:void(0)" ><?php echo $refLink; ?><input type="hidden" id="share_link_url" value="<?php echo $refLink; ?>" /></a></div>
+        <div id="raf-message" class="woocommerce-message"><?php _e( 'invite your friend to get this deal together !','gens-raf'); ?>
+            <a href="javascript:void(0)" >
+                <?php echo $refLink; ?><input type="text" style="display: none" id="share_link_url" value="<?php echo $refLink; ?>" />
+            </a>
+        </div>
 
     <?php
     }
