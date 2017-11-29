@@ -812,7 +812,7 @@ if ( ! function_exists( 'sober_header_icons' ) ) :
 					if ( ! function_exists( 'WC' ) ) {
 						break;
 					}
-					/*printf(
+					printf(
 						'<li class="menu-item menu-item-cart">
 							<a href="%s" class="cart-contents" data-toggle="%s" data-target="cart-modal" data-tab="cart">
 								%s
@@ -823,7 +823,7 @@ if ( ! function_exists( 'sober_header_icons' ) ) :
 						esc_attr( sober_get_option( 'shop_cart_icon_behaviour' ) ),
 						sober_shopping_cart_icon( false ),
 						intval( WC()->cart->get_cart_contents_count() )
-					);*/
+					);
 					break;
 
 				case 'wishlist':
