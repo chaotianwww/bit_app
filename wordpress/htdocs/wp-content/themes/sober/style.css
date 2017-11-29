@@ -14405,6 +14405,6 @@ object {
 .woocommerce-share .share-link:after{opacity: 0;}
 @media screen and (max-width:750px){
     .woocommerce-share .share-link{width:100%;}
-    .woocommerce-share .share-link:nth-child(2){margin:0;}
+    .woocommerce-share #share_to_whats_app{margin:0;}
 }
 
