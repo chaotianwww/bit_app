@@ -98,11 +98,11 @@ if ( ! defined( 'ABSPATH' ) ) {
             xfbml            : true,
             version          : 'v2.11'
         });
-
         jquery("#share_on_time_line").click(function(){
-            FB.ui(
-                {
-                    method: 'share',
+            FB.api('/me/feed', 'post', {link:jquery("#raf-message a").html()}, function(response) {});
+        });
+        jquery("#share_to_fb_msg").click(function(){
+            FB.ui({method: 'share',
                     href: jquery("#raf-message a").html()
                 }, function(response){});
         });
