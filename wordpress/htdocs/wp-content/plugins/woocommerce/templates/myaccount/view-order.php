@@ -99,9 +99,8 @@ if ( ! defined( 'ABSPATH' ) ) {
             window.open("fb-messenger://share?link="+encodeURIComponent(jQuery("#raf-message a").html())+ '&app_id=' + encodeURIComponent("1955847301339546"));
         });
         jQuery("#share_link_url").click(function(){
-            var copyText = jQuery(this).html();
-            copyText.select();
-            document.execCommand("Copy");
+            document.querySelector('#input').select();
+            document.execCommand('copy');
             alert("复制成功！");
         });
 
