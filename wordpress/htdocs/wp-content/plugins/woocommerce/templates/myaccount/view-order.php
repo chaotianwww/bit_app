@@ -101,7 +101,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         jQuery("#raf-message a").click(function(){
             document.querySelector('#share_link_url').select();
             document.execCommand('copy');
-            alert("复制成功！");
+            //alert("复制成功！");
         });
 
 
