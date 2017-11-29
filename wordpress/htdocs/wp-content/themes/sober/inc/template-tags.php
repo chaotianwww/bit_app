@@ -824,13 +824,13 @@ if ( ! function_exists( 'sober_header_icons' ) ) :
 						sober_shopping_cart_icon( false ),
 						intval( WC()->cart->get_cart_contents_count() )
 					);*/
-                    printf('<li class="menu-item menu-item-cart">
+                    /*printf('<li class="menu-item menu-item-cart">
                         <div class="fb-messengermessageus"
                          messenger_app_id="1955847301339546"
                          page_id="1736079153368048"
                          color="blue"
                          size="large">
-                    </div></li>');
+                    </div></li>');*/
 					break;
 
 				case 'wishlist':
