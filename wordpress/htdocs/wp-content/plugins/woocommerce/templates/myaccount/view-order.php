@@ -29,8 +29,10 @@ if ( ! defined( 'ABSPATH' ) ) {
     do_action( 'woocommerce_after_payment_share',['order_id'=> $order->get_order_number(),'item'=>$order_items]); ?>
 <div class="woocommerce-share">
     <button id="share_on_time_line" class="share-link"><i class="icon-facebook"></i>share on timeline</button>
-    <button id="share_to_whats_app" class="share-link"><i class="icon-whatsapp"></i>share to whatsapp</button>
-    <button id="share_to_fb_msg" class="share-link"><i class="icon-fb-msg"></i>share to fb msg</button>
+    <div class="menu-item-mobile-cart hidden-lg">
+        <button id="share_to_whats_app" class="share-link"><i class="icon-whatsapp"></i>share to whatsapp</button>
+        <button id="share_to_fb_msg" class="share-link"><i class="icon-fb-msg"></i>share to fb msg</button>
+    </div>
 </div>
     <?php
 	/* translators: 1: order number 2: order date 3: order status */
