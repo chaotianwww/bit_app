@@ -1054,6 +1054,7 @@ class WC_Cart extends WC_Legacy_Cart {
 	 */
 	public function add_to_cart( $product_id = 0, $quantity = 1, $variation_id = 0, $variation = array(), $cart_item_data = array() ) {
         try {
+            WC()->session->set( "is_direct_buy", $_POST['direct'] );
 			$product_id   = absint( $product_id );
 			$variation_id = absint( $variation_id );
 

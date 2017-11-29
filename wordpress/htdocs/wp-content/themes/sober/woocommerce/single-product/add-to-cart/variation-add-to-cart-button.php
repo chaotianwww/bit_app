@@ -49,7 +49,6 @@ global $product;
 
     <script>
         jQuery("[name='group']").click(function(){
-
                 jQuery("[name='direct']").val("0");
         });
     </script>

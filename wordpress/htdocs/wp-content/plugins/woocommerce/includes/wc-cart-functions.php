@@ -35,9 +35,13 @@ function empty_cart_before_add_to_cart() {
 }
 add_action( 'woocommerce_add_to_cart_handler', 'empty_cart_before_add_to_cart' );
 
+//WC()->session->set( "is_direct_buy", $_POST['direct'] );
 function bbloomer_force_cart_to_rand() {
-    $total_disc = WC()->cart->cart_contents_total * 9;
-    WC()->cart->add_fee( 'Surcharge', $total_disc );
+    $is_direct_buy = WC()->session->get('is_direct_buy');
+    if( !empty($is_direct_buy) && $is_direct_buy == 1){
+        $total_disc = WC()->cart->cart_contents_total * 9;
+        WC()->cart->add_fee( 'Surcharge', $total_disc );
+    }
 }
 add_action( 'woocommerce_cart_calculate_fees','bbloomer_force_cart_to_rand' );
 /**
