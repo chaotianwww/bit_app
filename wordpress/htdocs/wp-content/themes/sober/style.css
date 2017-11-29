@@ -14398,7 +14398,7 @@ object {
 .woocommerce-message-bgcolor{padding:20px 20px 20px 30px !important;background-color: #e5fee8;}
 .woocommerce-message-bgcolor a{font-weight: bold;}
 .woocommerce-message-bgcolor i,.woocommerce-share .share-link i{margin-right:10px;}
-.woocommerce-share .share-link{width:32%;padding:20px;margin:20px 0;border-radius: 8px;color:#fff;font-size:1.2em;}
+.woocommerce-share .share-link{width:100%;padding:20px;margin:20px 0;border-radius: 8px;color:#fff;font-size:1.2em;}
 .woocommerce-share .share-link:nth-child(1){background: #3765a3}
 .woocommerce-share .share-link:nth-child(2){background: #19bf3a;margin:0 1%;}
 .woocommerce-share .share-link:nth-child(3){background: #007aff;}
