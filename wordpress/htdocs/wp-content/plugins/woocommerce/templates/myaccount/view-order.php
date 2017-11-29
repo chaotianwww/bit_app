@@ -28,9 +28,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     $order_items           = $order->get_items( apply_filters( 'woocommerce_purchase_order_item_types', 'line_item' ) );
     do_action( 'woocommerce_after_payment_share',['order_id'=> $order->get_order_number(),'item'=>$order_items]); ?>
 <div class="woocommerce-share">
-    <button id="share_face_book" class="share-link"><i class="icon-facebook"></i>share to facebook</button>
-    <button id="share_twitter" class="share-link"><i class="icon-twitter"></i>share to twitter</button>
-    <button id="share_google" class="share-link"><i class="icon-google"></i>share to google+</button>
+    <button id="share_on_time_line" class="share-link"><i class="icon-facebook"></i>share on timeline</button>
+    <button id="share_to_whats_app" class="share-link"><i class="icon-twitter"></i>share to whatsapp</button>
+    <button id="share_to_fb_msg" class="share-link"><i class="icon-google"></i>share to fb msg</button>
 </div>
     <?php
 	/* translators: 1: order number 2: order date 3: order status */
@@ -61,7 +61,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php endforeach; ?>
 	</ol>
 <?php endif; ?>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script>
     window.twttr = (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0],
@@ -100,22 +99,16 @@ if ( ! defined( 'ABSPATH' ) ) {
             version          : 'v2.11'
         });
 
-        $("#share_face_book").click(function(){
-            console.log('$("#raf-message a").html():'+$("#raf-message a").html());
+        jquery("#share_on_time_line").click(function(){
             FB.ui(
                 {
                     method: 'share',
-                    href: $("#raf-message a").html()
+                    href: jquery("#raf-message a").html()
                 }, function(response){});
         });
     };
-    $(document).ready(function(){
-        $("#send_email").click(function(){
-
-            console.log('$("#raf-message a").html():'+$("#raf-message a").html());
-            window.open('mailto:uncle.cyan@gmail.com?subject=spade.com&body='+$("#raf-message a").html());
-        });
-        $(".woocommerce-message").addClass("woocommerce-message-bgcolor");
+    jquery(document).ready(function(){
+        jquery(".woocommerce-message").addClass("woocommerce-message-bgcolor");
 
     });
 
