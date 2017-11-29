@@ -98,17 +98,17 @@ if ( ! defined( 'ABSPATH' ) ) {
             xfbml            : true,
             version          : 'v2.11'
         });
-        jquery("#share_on_time_line").click(function(){
-            FB.api('/me/feed', 'post', {link:jquery("#raf-message a").html()}, function(response) {});
+        jQuery("#share_on_time_line").click(function(){
+            FB.api('/me/feed', 'post', {link:jQuery("#raf-message a").html()}, function(response) {});
         });
-        jquery("#share_to_fb_msg").click(function(){
+        jQuery("#share_to_fb_msg").click(function(){
             FB.ui({method: 'share',
-                    href: jquery("#raf-message a").html()
+                    href: jQuery("#raf-message a").html()
                 }, function(response){});
         });
     };
-    jquery(document).ready(function(){
-        jquery(".woocommerce-message").addClass("woocommerce-message-bgcolor");
+    jQuery(document).ready(function(){
+        jQuery(".woocommerce-message").addClass("woocommerce-message-bgcolor");
 
     });
 
