@@ -62,27 +62,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</ol>
 <?php endif; ?>
 <script>
-    window.twttr = (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0],
-            t = window.twttr || {};
-        if (d.getElementById(id)) return t;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://platform.twitter.com/widgets.js";
-        fjs.parentNode.insertBefore(js, fjs);
 
-        t._e = [];
-        t.ready = function(f) {
-            t._e.push(f);
-        };
-
-        return t;
-    }(document, "script", "twitter-wjs"));
-
-</script>
-<script>
-
-
+    console.log("testtesttest");
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId            : '1955847301339546',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v2.11'
+        });
+    };
     (function(d, s, id){
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) {return;}
@@ -91,29 +80,22 @@ if ( ! defined( 'ABSPATH' ) ) {
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId            : '1955847301339546',
-            autoLogAppEvents : true,
-            xfbml            : true,
-            version          : 'v2.11'
-        });
+    jQuery(document).ready(function(){
+        jQuery(".woocommerce-message").addClass("woocommerce-message-bgcolor");
+
         jQuery("#share_on_time_line").click(function(){
             console.log("share_on_time_line");
             FB.ui({method: 'share',
-                    href: jQuery("#raf-message a").html()
-                }, function(response){});
+                href: jQuery("#raf-message a").html()
+            }, function(response){});
         });
-    };
-
-
-    jQuery(document).ready(function(){
-        jQuery(".woocommerce-message").addClass("woocommerce-message-bgcolor");
 
         jQuery("#share_to_whats_app").click(function(){
             console.log("share_to_whats_app");
             window.open("https://web.whatsapp.com/send?text="+jQuery("#raf-message a").html());
         });
+
+
 
     });
 
