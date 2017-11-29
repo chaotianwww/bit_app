@@ -612,7 +612,7 @@ function sober_mobile_nav() {
 						foreach ( (array) $menu_bottom as $item ) {
 							switch ( $item ) {
 								case 'cart':
-									printf(
+									/*printf(
 										'<li class="item-cart"><a href="%s">
 											<svg viewBox="0 0 20 20"><use xlink:href="#basket-addtocart"></use></svg>
 											<span>%s</span>
@@ -621,7 +621,7 @@ function sober_mobile_nav() {
 										esc_url( wc_get_cart_url() ),
 										esc_html__( 'Shopping Cart', 'sober' ),
 										intval( WC()->cart->get_cart_contents_count() )
-									);
+									);*/
 									break;
 
 								case 'login':
