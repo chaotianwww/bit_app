@@ -1059,13 +1059,13 @@ if ( ! function_exists( 'sober_mobile_header_icon' ) ) :
 
 		switch ( $icon ) {
 			case 'cart':
-				printf(
+				/*printf(
 					'<a href="%s" class="cart-contents  menu-item-mobile-cart hidden-lg" data-toggle="%s" data-target="cart-modal" data-tab="cart">%s%s</a>',
 					esc_url( wc_get_cart_url() ),
 					esc_attr( sober_get_option( 'shop_cart_icon_behaviour' ) ),
 					sober_shopping_cart_icon( false ),
 					sober_get_option( 'mobile_cart_badge' ) ? '<span class="count cart-counter">' . intval( WC()->cart->get_cart_contents_count() ) . '</span>' : ''
-				);
+				);*/
 
 				break;
 
