@@ -40,7 +40,7 @@ function bbloomer_force_cart_to_rand() {
     $is_direct_buy = WC()->session->get('is_direct_buy');
     if( !empty($is_direct_buy) && $is_direct_buy == 1){
         $total_disc = WC()->cart->cart_contents_total * 9;
-        WC()->cart->add_fee( 'HANDING FEE', $total_disc );
+        WC()->cart->add_fee( 'HANDLING FEE', $total_disc );
     }
 }
 add_action( 'woocommerce_cart_calculate_fees','bbloomer_force_cart_to_rand' );
