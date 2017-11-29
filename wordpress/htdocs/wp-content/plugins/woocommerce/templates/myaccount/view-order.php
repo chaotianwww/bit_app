@@ -99,6 +99,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             version          : 'v2.11'
         });
         jQuery("#share_on_time_line").click(function(){
+            console.log("share_on_time_line");
             FB.ui({method: 'share',
                     href: jQuery("#raf-message a").html()
                 }, function(response){});
