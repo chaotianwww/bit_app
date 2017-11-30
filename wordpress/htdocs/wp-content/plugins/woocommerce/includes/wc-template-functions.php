@@ -1061,7 +1061,7 @@ if ( ! function_exists( 'woocommerce_variable_add_to_cart' ) ) {
             WC()->session->set( "ref_for_a_friends_order", $_GET['ref'] );
 
             global $wpdb;
-            $data = array( 'short_code' => $_GET['ref'],'user_id' => get_current_user_id(), 'ip_addr' => getenv($_SERVER['REMOTE_ADDR']));
+            $data = array( 'short_code' => $_GET['ref'],'user_id' => get_current_user_id(), 'ip_addr' => $_SERVER['REMOTE_ADDR']);
             $wpdb->insert('wp_woocommerce_order_refer_count', $data );
         }
 
