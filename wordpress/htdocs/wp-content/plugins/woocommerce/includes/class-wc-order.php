@@ -558,7 +558,7 @@ class WC_Order extends WC_Abstract_Order {
 	 * @return string
 	 */
 	public function get_billing_phone( $context = 'view' ) {
-		return $this->get_address_prop( 'phone', 'shipping0', $context );
+		return $this->get_address_prop( 'phone', 'billing', $context );
 	}
 
 	/**
@@ -811,7 +811,7 @@ class WC_Order extends WC_Abstract_Order {
 	 * @return string
 	 */
 	public function get_formatted_billing_address() {
-		return WC()->countries->get_formatted_address( apply_filters( 'woocommerce_order_formatted_billing_address', $this->get_address( 'billing' ), $this ) );
+		return WC()->countries->get_formatted_address( apply_filters( 'woocommerce_order_formatted_billing_address', $this->get_address( 'shipping0' ), $this ) );
 	}
 
 	/**
