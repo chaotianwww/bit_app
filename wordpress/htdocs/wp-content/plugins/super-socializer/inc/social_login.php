@@ -496,6 +496,8 @@ function the_champ_sanitize_profile_data($profileData, $provider){
 	$temp['first_name'] = isset($temp['first_name'][0]) && ctype_upper($temp['first_name'][0]) ? ucfirst(sanitize_user($temp['first_name'], true)) : sanitize_user($temp['first_name'], true);
 	$temp['last_name'] = isset($temp['last_name'][0]) && ctype_upper($temp['last_name'][0]) ? ucfirst(sanitize_user($temp['last_name'], true)) : sanitize_user($temp['last_name'], true);
 	$temp['provider'] = $provider;
+    echo 'xxxxxxxxxxxx';
+    print_r($temp);exit;
 	return $temp;
 }
 
