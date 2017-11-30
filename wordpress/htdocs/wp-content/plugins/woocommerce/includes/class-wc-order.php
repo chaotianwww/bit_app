@@ -48,7 +48,7 @@ class WC_Order extends WC_Abstract_Order {
 		// Order props
 		'customer_id'          => 0,
 		'order_key'            => '',
-		'shipping0'              => array(
+		'billing'              => array(
 			'first_name'       => '',
 			'last_name'        => '',
 			'company'          => '',
@@ -766,7 +766,6 @@ class WC_Order extends WC_Abstract_Order {
 	 * @return array The stored address after filter.
 	 */
 	public function get_address( $type = 'billing' ) {
-        print_r($this->data[ $type ]);exit;
 		return apply_filters( 'woocommerce_get_order_address', array_merge( $this->data[ $type ], $this->get_prop( $type, 'view' ) ), $type, $this );
 	}
 
@@ -812,7 +811,7 @@ class WC_Order extends WC_Abstract_Order {
 	 * @return string
 	 */
 	public function get_formatted_billing_address() {
-		return WC()->countries->get_formatted_address( apply_filters( 'woocommerce_order_formatted_billing_address', $this->get_address( 'shipping0_' ), $this ) );
+		return WC()->countries->get_formatted_address( apply_filters( 'woocommerce_order_formatted_billing_address', $this->get_address( 'billing' ), $this ) );
 	}
 
 	/**
@@ -859,7 +858,6 @@ class WC_Order extends WC_Abstract_Order {
 	 * @param mixed  $value Value of the prop.
 	 */
 	protected function set_address_prop( $prop, $address = 'billing', $value ) {
-
 		if ( array_key_exists( $prop, $this->data[ $address ] ) ) {
 			if ( true === $this->object_read ) {
 				if ( $value !== $this->data[ $address ][ $prop ] || ( isset( $this->changes[ $address ] ) && array_key_exists( $prop, $this->changes[ $address ] ) ) ) {
