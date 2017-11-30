@@ -496,8 +496,6 @@ function the_champ_sanitize_profile_data($profileData, $provider){
 	$temp['first_name'] = isset($temp['first_name'][0]) && ctype_upper($temp['first_name'][0]) ? ucfirst(sanitize_user($temp['first_name'], true)) : sanitize_user($temp['first_name'], true);
 	$temp['last_name'] = isset($temp['last_name'][0]) && ctype_upper($temp['last_name'][0]) ? ucfirst(sanitize_user($temp['last_name'], true)) : sanitize_user($temp['last_name'], true);
 	$temp['provider'] = $provider;
-    echo 'xxxxxxxxxxxx';
-    print_r($temp);exit;
 	return $temp;
 }
 
@@ -706,7 +704,9 @@ function the_champ_user_auth_ajax(){
 	}
 	$socialNetwork = sanitize_title($_POST['provider']);
 	$profileData = the_champ_sanitize_profile_data($profileData, $socialNetwork);
-	$response = the_champ_user_auth($profileData, $socialNetwork, $redirectionUrl);
+	print_r($profileData);exit;
+    $response = the_champ_user_auth($profileData, $socialNetwork, $redirectionUrl);
+
 	the_champ_ajax_response($response);
 }
 add_action('wp_ajax_the_champ_user_auth', 'the_champ_user_auth_ajax');
