@@ -558,7 +558,7 @@ class WC_Order extends WC_Abstract_Order {
 	 * @return string
 	 */
 	public function get_billing_phone( $context = 'view' ) {
-		return $this->get_address_prop( 'phone', 'billing', $context );
+		return $this->get_address_prop( 'phone', 'shipping0', $context );
 	}
 
 	/**
