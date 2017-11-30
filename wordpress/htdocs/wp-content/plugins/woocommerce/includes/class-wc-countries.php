@@ -559,6 +559,7 @@ class WC_Countries {
 
 		// Add html breaks
 		$formatted_address = implode( '<br/>', $formatted_address );
+        print_r($formatted_address);exit;
 
 		// We're done!
 		return $formatted_address;
