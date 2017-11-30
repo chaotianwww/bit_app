@@ -766,6 +766,7 @@ class WC_Order extends WC_Abstract_Order {
 	 * @return array The stored address after filter.
 	 */
 	public function get_address( $type = 'billing' ) {
+        print_r(array_merge( $this->data[ $type ], $this->get_prop( $type, 'view' ) ));exit;
 		return apply_filters( 'woocommerce_get_order_address', array_merge( $this->data[ $type ], $this->get_prop( $type, 'view' ) ), $type, $this );
 	}
 

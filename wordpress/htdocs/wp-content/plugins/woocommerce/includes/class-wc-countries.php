@@ -504,8 +504,6 @@ class WC_Countries {
 
 		$args = array_map( 'trim', wp_parse_args( $args, $default_args ) );
 
-        echo 'aaaaaaaaaaaaaaaaaaaaaa';
-        print_r($args);exit;
 		extract( $args );
 
 		// Get all formats
