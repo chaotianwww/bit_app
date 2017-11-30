@@ -151,7 +151,7 @@ class Dianxiaomi_API_Orders extends Dianxiaomi_API_Resource
 //				'paid' => isset($order->paid_date),
 //			),
 			'billing_address' => array(
-				'first_name' => $order->billing_first_name,
+				'first_name' => 'abcdfegtesttesttest',$order->billing_first_name,
 				'last_name' => $order->billing_last_name,
 				'company' => $order->billing_company,
 				'address_1' => $order->billing_address_1,
