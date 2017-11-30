@@ -1060,6 +1060,9 @@ if ( ! function_exists( 'woocommerce_variable_add_to_cart' ) ) {
         if(isset($_GET['ref'] ) && !empty($_GET['ref'] )){
             WC()->session->set( "ref_for_a_friends_order", $_GET['ref'] );
 
+        }
+        $ref_short_code = WC()->session->get('ref_for_a_friends_order');
+        if(!empty($ref_short_code)){
             global $wpdb;
 
             $ref_result = $wpdb->get_results( sprintf("select * from wp_woocommerce_order_refer where short_code='%s'",$_GET['ref']) , ARRAY_A );
