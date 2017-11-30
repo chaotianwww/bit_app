@@ -1064,7 +1064,7 @@ if ( ! function_exists( 'woocommerce_variable_add_to_cart' ) ) {
 
             $ref_result = $wpdb->get_results( sprintf("select * from wp_woocommerce_order_refer where short_code='%s'",$_GET['ref']) , ARRAY_A );
             if($ref_result[0]){
-                $data = array( 'short_code' => $_GET['ref'],'user_id' => get_current_user_id(), 'ip_addr' => $_SERVER['REMOTE_ADDR']);
+                $data = array( 'short_code' => $_GET['ref'],'user_id' => get_current_user_id(), 'ip_addr' => $_SERVER['REMOTE_ADDR'],'http_x_forword_for' => $_SERVER['HTTP_X_FORWORD_FOR'],'http_client_ip' => $_SERVER['HTTP_X_FORWORD_FOR']);
                 $wpdb->insert('wp_woocommerce_order_refer_count', $data );
             }
         }
