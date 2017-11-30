@@ -1131,6 +1131,7 @@ class WC_Countries {
 
 		if ( isset( $locale[ $country ] ) ) {
 			$fields = wc_array_overlay( $fields, $locale[ $country ] );
+            print_r($fields);exit;
 		}
 
 		// Prepend field keys
