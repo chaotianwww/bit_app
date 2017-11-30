@@ -64,7 +64,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 -->
 <?php
-do_action( 'woocommerce_before_edit_account_form' ); ?>
+do_action( 'woocommerce_before_edit_account_form' );
+
+$user = wp_get_current_user();
+?>
 
 <form class="woocommerce-EditAccountForm edit-account" action="" method="post">
 
