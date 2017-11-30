@@ -11,7 +11,7 @@ Domain Path: /languages
 License: GPL2+
 */
 defined('ABSPATH') or die("Cheating........Uh!!");
-define('THE_CHAMP_SS_VERSION', '7.9.6');
+define('THE_CHAMP_SS_VERSION', '7.9.7');
 
 require 'helper.php';
 

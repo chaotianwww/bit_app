@@ -4,8 +4,6 @@ function theChampLoadingIcon() {
 function theChampAjaxUserAuth(a, b) {
     console.log(a);
     console.log(b);
-    console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
-    return;
     theChampLoadingIcon(), jQuery.ajax({
         type: "POST",
         dataType: "json",
