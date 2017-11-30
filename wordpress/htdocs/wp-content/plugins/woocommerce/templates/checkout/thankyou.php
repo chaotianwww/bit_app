@@ -44,8 +44,10 @@ if ( ! defined( 'ABSPATH' ) ) {
             ?>
             <div class="woocommerce-share">
                 <button id="share_on_time_line" class="share-link"><i class="icon-facebook"></i>share on timeline</button>
-                <button id="share_to_whats_app" class="share-link"><i class="icon-whatsapp"></i>share to whatsapp</button>
-                <button id="share_to_fb_msg" class="share-link"><i class="icon-fb-msg"></i>share to fb msg</button>
+                <div class="menu-item-mobile-cart hidden-lg">
+                    <button id="share_to_whats_app" class="share-link"><i class="icon-whatsapp"></i>share to whatsapp</button>
+                    <button id="share_to_fb_msg" class="share-link"><i class="icon-fb-msg"></i>share to fb msg</button>
+                </div>
             </div>
 			<p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', __( 'Thank you. Your order has been received.', 'woocommerce' ), $order ); ?></p>
 
