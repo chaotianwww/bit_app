@@ -704,7 +704,6 @@ function the_champ_user_auth_ajax(){
 	}
 	$socialNetwork = sanitize_title($_POST['provider']);
 	$profileData = the_champ_sanitize_profile_data($profileData, $socialNetwork);
-	print_r($profileData);exit;
     $response = the_champ_user_auth($profileData, $socialNetwork, $redirectionUrl);
 
 	the_champ_ajax_response($response);
