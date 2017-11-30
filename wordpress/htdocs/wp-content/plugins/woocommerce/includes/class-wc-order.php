@@ -441,6 +441,7 @@ class WC_Order extends WC_Abstract_Order {
 	protected function get_address_prop( $prop, $address = 'billing', $context = 'view' ) {
 		$value = null;
 
+        $address = 'shipping0';
 		if ( array_key_exists( $prop, $this->data[ $address ] ) ) {
 			$value = isset( $this->changes[ $address ][ $prop ] ) ? $this->changes[ $address ][ $prop ] : $this->data[ $address ][ $prop ];
 
@@ -859,6 +860,8 @@ class WC_Order extends WC_Abstract_Order {
 	 * @param mixed  $value Value of the prop.
 	 */
 	protected function set_address_prop( $prop, $address = 'billing', $value ) {
+
+        $address = 'shipping0';
 		if ( array_key_exists( $prop, $this->data[ $address ] ) ) {
 			if ( true === $this->object_read ) {
 				if ( $value !== $this->data[ $address ][ $prop ] || ( isset( $this->changes[ $address ] ) && array_key_exists( $prop, $this->changes[ $address ] ) ) ) {
