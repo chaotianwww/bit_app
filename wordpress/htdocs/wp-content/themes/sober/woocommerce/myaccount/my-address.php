@@ -29,6 +29,8 @@ if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) {
         'shipping1' => esc_html__( 'Shipping Address', 'sober' )
 
 	), $customer_id );
+
+    $addr = ['billing','shipping0','shipping1'];
 } else {
 	$get_addresses = apply_filters( 'woocommerce_my_account_get_addresses', array(
 		'shipping' =>  esc_html__( 'Billing Address', 'sober' )
@@ -93,7 +95,7 @@ $col    = 1;
 <?php endforeach; ?>
 
 <?php if($total_num < 3 && $total_num > 0 ){ ?>
-    <div class="edit-button"><a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', 'shipping'.$total_num ) ); ?>" class="edit button">add more shipping address</a></div>
+    <div class="edit-button"><a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $addr[$total_num] ) ); ?>" class="edit button">add more shipping address</a></div>
 <?php } ?>
 
 <?php if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) echo '</div>'; ?>
