@@ -811,6 +811,8 @@ class WC_Order extends WC_Abstract_Order {
 	 * @return string
 	 */
 	public function get_formatted_billing_address() {
+        echo 'cccccccccccccccccccccccccccccccccc';
+        print_r($this->get_address( 'billing' ));exit;
 		return WC()->countries->get_formatted_address( apply_filters( 'woocommerce_order_formatted_billing_address', $this->get_address( 'billing' ), $this ) );
 	}
 
