@@ -192,7 +192,7 @@ class WC_Checkout {
 	public function get_checkout_fields( $fieldset = '' ) {
 		if ( is_null( $this->fields ) ) {
 			$this->fields = array(
-				'billing'  => WC()->countries->get_address_fields( $this->get_value( 'billing_country' ), 'billing_' ),
+				'billing'  => WC()->countries->get_address_fields( $this->get_value( 'billing_country' ), 'shipping0_' ),
 				'shipping' => WC()->countries->get_address_fields( $this->get_value( 'shipping_country' ), 'shipping_' ),
 				'account'  => array(),
 				'order'    => array(

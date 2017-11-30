@@ -48,7 +48,7 @@ class WC_Order extends WC_Abstract_Order {
 		// Order props
 		'customer_id'          => 0,
 		'order_key'            => '',
-		'billing'              => array(
+		'shipping0'              => array(
 			'first_name'       => '',
 			'last_name'        => '',
 			'company'          => '',
@@ -766,7 +766,6 @@ class WC_Order extends WC_Abstract_Order {
 	 * @return array The stored address after filter.
 	 */
 	public function get_address( $type = 'billing' ) {
-        echo 'xxxxxxxxxxxx';
         print_r($this->data[ $type ]);exit;
 		return apply_filters( 'woocommerce_get_order_address', array_merge( $this->data[ $type ], $this->get_prop( $type, 'view' ) ), $type, $this );
 	}
@@ -813,7 +812,7 @@ class WC_Order extends WC_Abstract_Order {
 	 * @return string
 	 */
 	public function get_formatted_billing_address() {
-		return WC()->countries->get_formatted_address( apply_filters( 'woocommerce_order_formatted_billing_address', $this->get_address( 'billing' ), $this ) );
+		return WC()->countries->get_formatted_address( apply_filters( 'woocommerce_order_formatted_billing_address', $this->get_address( 'shipping0_' ), $this ) );
 	}
 
 	/**
