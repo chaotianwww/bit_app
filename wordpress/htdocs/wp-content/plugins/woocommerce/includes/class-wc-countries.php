@@ -547,12 +547,10 @@ class WC_Countries {
 			'{postcode_upper}'   => strtoupper( $postcode ),
 			'{country_upper}'    => strtoupper( $full_country ),
 		), $args ) );
-        echo 'zzzzzzzzzzzzzzzzzzzzzzz';
-        print_r($replace);exit;
 
 		$formatted_address = str_replace( array_keys( $replace ), $replace, $format );
         echo 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
-        print_r($formatted_address);exit;
+        var_dump($formatted_address);exit;
 
 		// Clean up white space
 		$formatted_address = preg_replace( '/  +/', ' ', trim( $formatted_address ) );
