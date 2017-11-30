@@ -549,6 +549,8 @@ class WC_Countries {
 		), $args ) );
 
 		$formatted_address = str_replace( array_keys( $replace ), $replace, $format );
+        echo 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+        print_r($formatted_address);exit;
 
 		// Clean up white space
 		$formatted_address = preg_replace( '/  +/', ' ', trim( $formatted_address ) );
@@ -559,7 +561,6 @@ class WC_Countries {
 
 		// Add html breaks
 		$formatted_address = implode( '<br/>', $formatted_address );
-        print_r($formatted_address);exit;
 
 		// We're done!
 		return $formatted_address;
