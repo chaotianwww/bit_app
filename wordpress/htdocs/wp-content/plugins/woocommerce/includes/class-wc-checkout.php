@@ -895,7 +895,7 @@ class WC_Checkout {
 					$customer->{"set_{$key}"}( $value );
 
 				// Store custom fields prefixed with wither shipping_ or billing_.
-				} elseif ( 0 === stripos( $key, 'billing_' ) || 0 === stripos( $key, 'shipping_' ) ) {
+				} elseif ( 0 === stripos( $key, 'billing_' ) || 0 === stripos( $key, 'shipping0_' ) ) {
 					$customer->update_meta_data( $key, $value );
 				}
 			}
