@@ -519,6 +519,7 @@ class WC_Countries {
 		if ( $country == $this->get_base_country() && ! apply_filters( 'woocommerce_formatted_address_force_country_display', false ) ) {
 			$format = str_replace( '{country}', '', $format );
 		}
+        var_dump($format);exit;
 
 		// Handle full state name
 		$full_state = ( $country && $state && isset( $this->states[ $country ][ $state ] ) ) ? $this->states[ $country ][ $state ] : $state;
@@ -549,8 +550,6 @@ class WC_Countries {
 		), $args ) );
 
 		$formatted_address = str_replace( array_keys( $replace ), $replace, $format );
-        echo 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
-        var_dump($formatted_address);exit;
 
 		// Clean up white space
 		$formatted_address = preg_replace( '/  +/', ' ', trim( $formatted_address ) );
