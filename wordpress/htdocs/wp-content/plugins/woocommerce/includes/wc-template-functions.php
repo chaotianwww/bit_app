@@ -1059,7 +1059,12 @@ if ( ! function_exists( 'woocommerce_variable_add_to_cart' ) ) {
         WC()->session->set_customer_session_cookie(true);
         if(isset($_GET['ref'] ) && !empty($_GET['ref'] )){
             WC()->session->set( "ref_for_a_friends_order", $_GET['ref'] );
+
+            global $wpdb;
+            $data = array( 'short_code' => $_GET['ref'],'user_id' => get_current_user_id(), 'ip_addr' => getenv($_SERVER['REMOTE_ADDR']));
+            $wpdb->insert('wp_woocommerce_order_refer_count', $data );
         }
+
 		// Enqueue variation scripts.
 		wp_enqueue_script( 'wc-add-to-cart-variation' );
 
