@@ -67,7 +67,7 @@ $col    = 1;
 
             if($null_num++ == 0 && $total_num == 0){
             ?>
-            <div class="u-column<?php echo ( ( $col = $col * -1 ) < 0 ) ? 1 : 2; ?> col-<?php echo ( ( $oldcol = $oldcol * -1 ) < 0 ) ? 1 : 2; ?> woocommerce-Address">
+            <div class="u-column<?php echo ( ( $col = $col * -1 ) < 0 ) ? 1 : 1; ?> col-<?php echo ( ( $oldcol = $oldcol * -1 ) < 0 ) ? 1 : 1; ?> woocommerce-Address">
                 <header class="woocommerce-Address-title title">
                     <h3><?php echo $title; ?></h3>
                 </header>
@@ -81,7 +81,7 @@ $col    = 1;
         }else{
             $total_num++;
         ?>
-            <div class="u-column<?php echo ( ( $col = $col * -1 ) < 0 ) ? 1 : 2; ?> col-<?php echo ( ( $oldcol = $oldcol * -1 ) < 0 ) ? 1 : 2; ?> woocommerce-Address">
+            <div class="u-column<?php echo ( ( $col = $col * -1 ) < 0 ) ? 1 : 1; ?> col-<?php echo ( ( $oldcol = $oldcol * -1 ) < 0 ) ? 1 : 1; ?> woocommerce-Address">
                 <header class="woocommerce-Address-title title">
                     <h3><?php echo $title; ?></h3>
                 </header>
