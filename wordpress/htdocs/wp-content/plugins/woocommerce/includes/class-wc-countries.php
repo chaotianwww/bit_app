@@ -547,6 +547,8 @@ class WC_Countries {
 			'{postcode_upper}'   => strtoupper( $postcode ),
 			'{country_upper}'    => strtoupper( $full_country ),
 		), $args ) );
+        echo 'zzzzzzzzzzzzzzzzzzzzzzz';
+        print_r($replace);exit;
 
 		$formatted_address = str_replace( array_keys( $replace ), $replace, $format );
         echo 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
