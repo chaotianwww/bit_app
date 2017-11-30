@@ -859,7 +859,7 @@ class Sober_WooCommerce {
 
 		<?php else : ?>
 
-			<h3><?php esc_html_e( 'Billing Detailstest4', 'sober' ); ?></h3>
+			<h3><?php esc_html_e( 'Billing Details', 'sober' ); ?></h3>
 
 		<?php endif;
 	}
