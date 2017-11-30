@@ -300,7 +300,7 @@ class WC_Checkout {
 
 				// Store custom fields prefixed with wither shipping_ or billing_. This is for backwards compatibility with 2.6.x.
 				// TODO: Fix conditional to only include shipping/billing address fields in a smarter way without str(i)pos.
-				} elseif ( ( 0 === stripos( $key, 'billing_' ) || 0 === stripos( $key, 'shipping_' ) )
+				} elseif ( ( 0 === stripos( $key, 'billing_' ) || 0 === stripos( $key, 'shipping_' )|| 0 === stripos( $key, 'shipping0_' )  )
 					&& ! in_array( $key, array( 'shipping_method', 'shipping_total', 'shipping_tax' ) ) ) {
 					$order->update_meta_data( '_' . $key, $value );
 				}
@@ -895,7 +895,7 @@ class WC_Checkout {
 					$customer->{"set_{$key}"}( $value );
 
 				// Store custom fields prefixed with wither shipping_ or billing_.
-				} elseif ( 0 === stripos( $key, 'billing_' ) || 0 === stripos( $key, 'shipping0_' ) ) {
+				} elseif ( 0 === stripos( $key, 'billing_' ) || 0 === stripos( $key, 'shipping_' ) || 0 === stripos( $key, 'shipping0_' ) ) {
 					$customer->update_meta_data( $key, $value );
 				}
 			}
