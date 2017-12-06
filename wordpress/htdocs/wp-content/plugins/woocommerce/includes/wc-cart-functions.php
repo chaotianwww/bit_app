@@ -39,7 +39,7 @@ add_action( 'woocommerce_add_to_cart_handler', 'empty_cart_before_add_to_cart' )
 function bbloomer_force_cart_to_rand() {
     $is_direct_buy = WC()->session->get('is_direct_buy');
     if( !empty($is_direct_buy) && $is_direct_buy == 1){
-        $total_disc = WC()->cart->cart_contents_total * 9;
+        $total_disc = WC()->cart->cart_contents_total * 0.3;
         WC()->cart->add_fee( 'HANDLING FEE', $total_disc );
     }
 }
