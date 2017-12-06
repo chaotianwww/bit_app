@@ -26,7 +26,7 @@ global $product;
 	) );*/
     ?>
 
-    <button  type="submit" name="direct" class="single_add_to_cart_button price direct-purchase"><?php esc_html_e( 'direct buy　$'.$product->price*10, 'sober' ); ?></button>
+    <button  type="submit" name="direct" class="single_add_to_cart_button price direct-purchase"><?php esc_html_e( 'direct buy　$'.$product->price*1.3, 'sober' ); ?></button>
     <?php
 
 	/**
