@@ -836,7 +836,6 @@ if ( ! function_exists( 'sober_header_icons' ) ) :
                                 display: block;
                                 width: 27px;
                                 height: 27px;
-                                background-color: #0084ff;
                                 text-align:center;
                                 border-radius: 27px;
                             ">
