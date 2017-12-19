@@ -840,7 +840,7 @@ if ( ! function_exists( 'sober_header_icons' ) ) :
                                 text-align:center;
                                 border-radius: 27px;
                             ">
-                        <img src="https://vanshirt.com/wp-content/plugins/ninja-facebook-messenger/frontend/images/facebook-messenger.svg" alt="" style="
+                        <img src="https://image.flaticon.com/icons/svg/270/270794.svg" alt="" style="
                                 height: auto;
                                 width: 80%;
                                 height: 80%;
@@ -1092,7 +1092,7 @@ if ( ! function_exists( 'sober_mobile_header_icon' ) ) :
                                 text-align:center;
                                 border-radius: 27px;
                             ">
-                        <img src="https://vanshirt.com/wp-content/plugins/ninja-facebook-messenger/frontend/images/facebook-messenger.svg" alt="" style="
+                        <img src="https://image.flaticon.com/icons/svg/270/270794.svg" alt="" style="
                                 height: auto;
                                 width: 80%;
                                 height: 80%;
